@@ -6188,6 +6188,13 @@
     <Content Include="sass\pages\search.scss" />
     <Content Include="sass\pages\tasks.scss" />
     <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Shared\_DashboardFirstRowComponents.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_QuickSideBar.cshtml" />
+    <Content Include="Views\Shared\_SideBar.cshtml" />
+    <Content Include="Views\Shared\_NavigationMenu.cshtml" />
+    <Content Include="Views\Shared\_PageAction.cshtml" />
+    <Content Include="Views\Shared\_SearchBox.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
