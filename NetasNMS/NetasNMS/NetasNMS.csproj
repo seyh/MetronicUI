@@ -6195,6 +6195,8 @@
     <Content Include="Views\Shared\_NavigationMenu.cshtml" />
     <Content Include="Views\Shared\_PageAction.cshtml" />
     <Content Include="Views\Shared\_SearchBox.cshtml" />
+    <Content Include="Views\Shared\_CpuUsageTable.cshtml" />
+    <Content Include="Views\Shared\_MemoryUsageTable.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
