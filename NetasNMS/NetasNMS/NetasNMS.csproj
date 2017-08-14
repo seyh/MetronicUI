@@ -6202,6 +6202,7 @@
     <Content Include="Views\Shared\_TotalClient.cshtml" />
     <Content Include="Views\Shared\_WirelessResourceStats.cshtml" />
     <Content Include="Views\Shared\_DeviceResourceStatistics.cshtml" />
+    <Content Include="Views\Shared\_WLANUserCountStats.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
