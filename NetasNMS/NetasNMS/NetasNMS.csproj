@@ -6188,7 +6188,6 @@
     <Content Include="sass\pages\search.scss" />
     <Content Include="sass\pages\tasks.scss" />
     <Content Include="Views\Dashboard\Index.cshtml" />
-    <Content Include="Views\Shared\_DashboardFirstRowComponents.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_QuickSideBar.cshtml" />
     <Content Include="Views\Shared\_SideBar.cshtml" />
@@ -6197,6 +6196,11 @@
     <Content Include="Views\Shared\_SearchBox.cshtml" />
     <Content Include="Views\Shared\_CpuUsageTable.cshtml" />
     <Content Include="Views\Shared\_MemoryUsageTable.cshtml" />
+    <Content Include="Views\Shared\_TotalAPs.cshtml" />
+    <Content Include="Views\Shared\_ManagedAPs.cshtml" />
+    <Content Include="Views\Shared\_OfflineAPs.cshtml" />
+    <Content Include="Views\Shared\_TotalClient.cshtml" />
+    <Content Include="Views\Shared\_WirelessResourceStats.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

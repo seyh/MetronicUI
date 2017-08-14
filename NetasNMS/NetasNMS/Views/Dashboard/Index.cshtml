@@ -142,12 +142,19 @@
             </div>
         </div>
         <!-- END PAGE HEADER-->
-        @Html.Partial("_DashboardFirstRowComponents")
+        <div class="row">
+            @Html.Partial("_TotalAPs")
+            @Html.Partial("_ManagedAPs")
+            @Html.Partial("_OfflineAPs")
+            @Html.Partial("_TotalClient")
+        </div>
         <div class="row">
             @Html.Partial("_CpuUsageTable")
             @Html.Partial("_MemoryUsageTable")
         </div>
-
+        <div class="row">
+            @Html.Partial("_WirelessResourceStats")
+        </div>
     </div>
     <!-- END CONTENT BODY -->
 </div>
