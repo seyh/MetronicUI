@@ -6204,6 +6204,7 @@
     <Content Include="Views\Shared\_DeviceResourceStatistics.cshtml" />
     <Content Include="Views\Shared\_CurrentAlarms.cshtml" />
     <Content Include="Views\Shared\_WLANUserCountStats.cshtml" />
+    <Content Include="Views\Shared\_AlarmOnNEs.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
