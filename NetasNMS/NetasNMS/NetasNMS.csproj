@@ -6201,6 +6201,7 @@
     <Content Include="Views\Shared\_OfflineAPs.cshtml" />
     <Content Include="Views\Shared\_TotalClient.cshtml" />
     <Content Include="Views\Shared\_WirelessResourceStats.cshtml" />
+    <Content Include="Views\Shared\_DeviceResourceStatistics.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
