@@ -209,3 +209,5 @@ NetasNMS/packages
 NetasNMS/NetasNMS/obj
 NetasNMS/.vs/config/applicationhost.config
 NetasNMS/.vs/NetasNMS/v14/.suo
+NetasNMS/.vs/NetasNMS.sqlite
+NetasNMS/.vs/NetasNMS/v15/sqlite3/storage.ide
