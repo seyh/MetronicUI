@@ -1,9 +1,9 @@
-﻿<div class="col-lg-6 col-xs-12 col-sm-12">
+﻿<div id="MemoryUsageTbl" class="col-lg-6 col-xs-12 col-sm-12">
     <div class="portlet light ">
         <div class="portlet-title">
             <div class="caption" style="width: 100%; border-bottom: 1px solid #eee; margin-bottom: 15px;">
                 <i class="fa fa-server font-dark"></i>
-                <span class="caption-subject bold uppercase font-dark" style="display:block; float:left; ">Top 10 Average Memory Usage </span>
+                <span class="caption-subject bold uppercase font-dark" style="display:block; float:left; ">Top 10 Average WLC Memory Usage </span>
                 <span class="caption-helper" style="display:block; float:right; font-size: 12px; margin-top:3px;">Last updated time: 12/08/2017 20:00 </span>
             </div>
             <div class="portlet-body">
@@ -11,64 +11,28 @@
                     <thead>
                         <tr>
                             <th class="all">Device Name</th>
-                            <th class="all">Memory Process Usage</th>
+                            <th class="all">CPU Process Usage</th>
                             <th class="all" style="width:1px;text-align: center;">%</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody data-bind="foreach: TopNMemory">
                         <tr>
                             <td>
-                                <i class="fa fa-arrow-circle-right" style="color:#5C9BD1;margin-right:3px"></i>
-                                <a href="">ACU2</a>
+                                <i class="fa" data-bind="style: { color: percentageValue() >= 65 ? '#f36a5a' : percentageValue() < 65 && percentageValue() > 35 ? '#5C9BD1': '#2ab4c0' }, css: { 'fa-arrow-circle-up': percentageValue() >= 65, 'fa-arrow-circle-right': percentageValue() < 65 && percentageValue() > 35, 'fa-arrow-circle-down': percentageValue() <= 35 }"></i>
+                                <a href=""><span data-bind="text: name()"></span></a>
                             </td>
                             <td style="padding-bottom:0px;padding-top:0px;">
                                 <div class="dashboard-stat2 " style="background:transparent; padding-bottom:0px;">
                                     <div class="progress-info">
                                         <div class="progress">
-                                            <span style="width: 50%;" class="progress-bar progress-bar-success blue-sharp">
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td >
-                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <i class="fa fa-arrow-circle-down" style="color:#2ab4c0;margin-right:3px"></i>
-                                <a href="">ACU2</a>
-                            </td>
-                            <td style="padding-bottom:0px;padding-top:0px;">
-                                <div class="dashboard-stat2 " style="background:transparent; padding-bottom:0px;">
-                                    <div class="progress-info">
-                                        <div class="progress">
-                                            <span style="width: 30%;" class="progress-bar progress-bar-success green-sharp">
+                                            <span class="progress-bar progress-bar-success" data-bind="style: { width: function(){ return percentageValue() + '%'; }() }, css: { 'red-haze': percentageValue() >= 65, 'blue-sharp': percentageValue() < 65 && percentageValue() > 35, 'green-sharp': percentageValue() <= 35 }">
                                             </span>
                                         </div>
                                     </div>
                                 </div>
                             </td>
                             <td>
-                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 30% </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><i class="fa fa-arrow-circle-up" style="color:#f36a5a;margin-right:3px"></i><a href="">ACU2</a></td>
-                            <td style="padding-bottom:0px;padding-top:0px;">
-                                <div class="dashboard-stat2 " style="background:transparent; padding-bottom:0px;">
-                                    <div class="progress-info">
-                                        <div class="progress">
-                                            <span style="width: 85%;" class="progress-bar progress-bar-success red-haze">
-                                                <span class="sr-only">85%</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 85% </div>
+                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"><span data-bind="text: percentageValue()"></span>%</div>
                             </td>
                         </tr>
                     </tbody>
@@ -77,3 +41,32 @@
         </div>
     </div>
 </div>
+
+<script src="../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            url: "https://192.168.68.230/data/dashboard/topMemory",
+            success: function (TopMemory) {
+                ko.applyBindings(new TopNMemoryUsageModel(TopMemory), document.getElementById('MemoryUsageTbl'));
+            }
+        });
+    });
+
+    function SetCPUTableItem(ip, name, value) {
+        this.ip = ko.observable(ip);
+        if (name == undefined || name == "") this.name = ko.observable(ip);
+        else this.name = ko.observable(name);
+        this.percentageValue = ko.observable(value.toFixed(1));
+    }
+
+    function TopNMemoryUsageModel(TopMemory) {
+        this.TopNMemory = ko.observableArray([]);
+        if (TopMemory)
+            for (var i = 0; i < TopMemory.length; i++)
+                this.TopNMemory.push(new SetCPUTableItem(TopMemory[i].ip, TopMemory[i].name, TopMemory[i].value));
+    }
+</script>
