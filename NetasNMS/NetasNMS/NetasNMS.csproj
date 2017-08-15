@@ -5500,7 +5500,12 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ConfigrationController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\MonitorController.cs" />
+    <Compile Include="Controllers\ReportingController.cs" />
+    <Compile Include="Controllers\ScheduleTasksController.cs" />
+    <Compile Include="Controllers\SystemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -6205,6 +6210,7 @@
     <Content Include="Views\Shared\_CurrentAlarms.cshtml" />
     <Content Include="Views\Shared\_WLANUserCountStats.cshtml" />
     <Content Include="Views\Shared\_AlarmOnNEs.cshtml" />
+    <Content Include="Views\System\Settings.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -6217,6 +6223,10 @@
     <Folder Include="assets\apps\img\" />
     <Folder Include="assets\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Configration\" />
+    <Folder Include="Views\Monitor\" />
+    <Folder Include="Views\Reporting\" />
+    <Folder Include="Views\ScheduleTasks\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

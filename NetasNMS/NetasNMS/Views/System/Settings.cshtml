@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- BEGIN CONTENT -->
+<div class="page-content-wrapper">
+    <!-- BEGIN CONTENT BODY -->
+    <div class="page-content">
+        <!-- BEGIN PAGE HEADER-->
+        <h1 class="page-title">
+            System
+            <small>statistics, charts and recent events</small>
+        </h1>
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li>
+                    <i class="icon-home"></i>
+                    <a href="index.html">Home</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li>
+                    <span>Dashboard</span>
+                </li>
+            </ul>
+            <div class="page-toolbar">
+                <div class="btn-group pull-right">
+                    <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+                        Actions
+                        <i class="fa fa-angle-down"></i>
+                    </button>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                        <li>
+                            <a href="#">
+                                <i class="icon-bell"></i> Action
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-shield"></i> Another action
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-user"></i> Something else here
+                            </a>
+                        </li>
+                        <li class="divider"> </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-bag"></i> Separated link
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE HEADER-->
+        <div class="row">
+            @Html.Partial("_TotalAPs")
+            @Html.Partial("_ManagedAPs")
+            @Html.Partial("_OfflineAPs")
+            @Html.Partial("_TotalClient")
+        </div>
+        <div class="row">
+            @Html.Partial("_CpuUsageTable")
+            @Html.Partial("_MemoryUsageTable")
+        </div>
+        <div class="row">
+            @Html.Partial("_WirelessResourceStats")
+        </div>
+        <div class="row">
+            @Html.Partial("_CurrentAlarms")
+            @Html.Partial("_AlarmOnNEs")
+        </div>
+
+        <div class="row">
+            @Html.Partial("_WLANUserCountStats")
+        </div>
+
+    </div>
+    <!-- END CONTENT BODY -->
+</div>
+<!-- END CONTENT -->
+
