@@ -23,33 +23,24 @@
 
                 var chart = AmCharts.makeChart("dashboard_amchart_3", {
                     "type": "serial",
-                    "addClassNames": true,
                     "theme": "light",
-                    "path": "../assets/global/plugins/amcharts/ammap/images/",
-                    "autoMargins": false,
-                    "marginLeft": 30,
-                    "marginRight": 8,
-                    "marginTop": 10,
-                    "marginBottom": 26,
-                    "balloon": {
-                        "adjustBorderColor": false,
-                        "horizontalPadding": 10,
-                        "verticalPadding": 8,
-                        "color": "#ffffff"
-                    },
-
+                    "marginRight": 70,
                     "dataProvider": [{
-                        "year": "Critical",
-                        "income": 23.5
+                        "country": "Critical",
+                        "visits": 3025,
+                        "color": "#FF0F00"
                     }, {
-                        "year": "Major",
-                        "income": 26.2
+                        "country": "Major",
+                        "visits": 1882,
+                        "color": "#FF6600"
                     }, {
-                        "year": "Minor",
-                        "income": 30.1
+                        "country": "Minor",
+                        "visits": 1809,
+                        "color": "#FF9E01"
                     }, {
-                        "year": "Warning",
-                        "income": 29.5
+                        "country": "Warning",
+                        "visits": 1322,
+                        "color": "#FCD202"
                     }],
                     "valueAxes": [{
                         "axisAlpha": 0,
@@ -57,34 +48,38 @@
                     }],
                     "startDuration": 1,
                     "graphs": [{
-                        "alphaField": "alpha",
-                        "balloonText": "<span style='font-size:12px;'>[[title]] in [[category]]:<br><span style='font-size:20px;'>[[value]]</span> [[additional]]</span>",
-                        "fillAlphas": 1,
-                        "title": "Income",
+                        "balloonText": "<b>[[category]]: [[value]]</b>",
+                        "fillColorsField": "color",
+                        "fillAlphas": 0.9,
+                        "lineAlpha": 0.2,
                         "type": "column",
-                        "valueField": "income",
-                        "dashLengthField": "dashLengthColumn"
+                        "valueField": "visits"
                     }],
-                    "categoryField": "year",
+                    "chartCursor": {
+                        "categoryBalloonEnabled": false,
+                        "cursorAlpha": 0,
+                        "zoomable": false
+                    },
+                    "categoryField": "country",
                     "categoryAxis": {
                         "gridPosition": "start",
-                        "axisAlpha": 0,
-                        "tickLength": 0
+                        "labelRotation": 0
                     },
                     "listeners": [{
                         "event": "clickGraphItem",
-                        "method": function(event) {
+                        "method": function (event) {
                             alert(event.item.category);
                         }
                     }],
                     "export": {
                         "enabled": true
                     }
+
                 });
             }
         }
     }();
-    
+
     jQuery(document).ready(function () {
         BarChart.initAmChart3(); // init metronic core componets
     });
