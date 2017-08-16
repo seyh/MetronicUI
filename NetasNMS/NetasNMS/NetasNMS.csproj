@@ -6234,6 +6234,7 @@
     <Content Include="Views\Monitor\ACNetworkMonitor.cshtml" />
     <Content Include="Views\Monitor\APNetworkMonitor.cshtml" />
     <Content Include="Views\Monitor\ClientNetworkMonitor.cshtml" />
+    <Content Include="Views\Shared\_NetworkDeviceStatus.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
