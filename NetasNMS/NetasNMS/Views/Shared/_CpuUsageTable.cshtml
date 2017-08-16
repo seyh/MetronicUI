@@ -4,7 +4,7 @@
             <div class="caption" style="width: 100%; border-bottom: 1px solid #eee; margin-bottom: 15px;">
                 <i class="fa fa-server font-dark"></i>
                 <span class="caption-subject bold uppercase font-dark" style="display:block; float:left; font-size: 14px;">Top 10 Average WLC CPU Usage </span>
-                <span class="caption-helper" style="display:block; float:right; font-size: 12px; margin-top:3px;">Last updated time: 12/08/2017 20:00 </span>
+                <span class="caption-helper" style="display:block; float:right; font-size: 12px; margin-top:3px;">Last updated time: <span data-bind="text: LastUpdate"></span></span>
             </div>
             <div class="portlet-body">
                 <table class="table table-striped table-bordered table-hover dt-responsive" width="100" id="sample_1">
@@ -47,7 +47,7 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $.ajax({
-            url: "https://192.168.68.230/data/dashboard/topCPU",
+            url: "http://192.168.1.33:8081/data/dashboard/topCPU",
             success: function (TopCPU) {
                 ko.applyBindings(new TopNCPUUsageModel(TopCPU), document.getElementById('CPUUsageTbl'));
             }
@@ -63,6 +63,7 @@
     
     function TopNCPUUsageModel(TopCPU) {
         this.TopNCPU = ko.observableArray([]);
+        this.LastUpdate = ko.observable(moment().format('DD/MM/YYYY hh:mm'));
         if (TopCPU)
             for (var i = 0; i < TopCPU.length; i++)
                 this.TopNCPU.push(new SetCPUTableItem(TopCPU[i].ip, TopCPU[i].name, TopCPU[i].value));
