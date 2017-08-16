@@ -10,7 +10,7 @@
         <div class="portlet-body">
             <div class="row">
                 <div class="col-lg-4 col-xs-12 col-sm-12">
-                    <div id="chart_6" class="chart" style="height: 400px;"> </div>
+                    <div id="chart_6" class="chart" style="height: 250px;"> </div>
                 </div>
 
                 <div class="col-lg-8 col-xs-12 col-sm-12">
@@ -25,116 +25,74 @@
                     <table class="table table-striped table-bordered table-hover dt-responsive" width="100" id="sample_1">
                         <thead>
                             <tr>
-                                <th class="all">Alarm Color</th>
-                                <th class="all">Alarm Type</th>
-                                <th class="all">Alarm Count</th>
-                                <th class="all">Alarm Percentage</th>
+                                <th class="all" style="width:15%; text-align:center;">Status Type </th>
+                                <th class="all" style="width:25%; text-align:center;">Status Color</th>
+                                <th class="all" style="width:30%; text-align:center;">Count</th>
+                                <th class="all" style="width:30%; text-align:center;">Percentage</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>
-                                    <i class="fa fa-arrow-circle-right" style="color:#5C9BD1;margin-right:3px"></i>
-                                    <a href="">ACU2</a>
+                                    <i class="fa fa-arrow-circle-up" style="color:#ed6b75"></i>
+                                    <a href=""><span>Unreachable</span></a>
                                 </td>
                                 <td>
-                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
+                                    <div class="progress-info">
+                                        <div class="progress" style="margin:0px !important; height:5px; margin-top: 7px !important;">
+                                            <span style="width: 100%;" class="progress-bar progress-bar-danger">
+                                                <span class="sr-only">100% grow</span>
+                                            </span>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
+                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px">1</div>
                                 </td>
                                 <td>
-                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <i class="fa fa-arrow-circle-right" style="color:#5C9BD1;margin-right:3px"></i>
-                                    <a href="">ACU2</a>
-                                </td>
-                                <td>
-                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
-                                </td>
-                                <td>
-                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
-                                </td>
-                                <td>
-                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
+                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px">33%</div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <i class="fa fa-arrow-circle-right" style="color:#5C9BD1;margin-right:3px"></i>
-                                    <a href="">ACU2</a>
+                                    <i class="fa fa-arrow-circle-right" style="color:#fdd400"></i>
+                                    <a href=""><span>Warning</span></a>
                                 </td>
                                 <td>
-                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
+                                    <div class="progress-info">
+                                        <div class="progress" style="margin:0px !important; height:5px; margin-top: 7px !important;">
+                                            <span style="width: 100%;" class="progress-bar progress-bar-warning">
+                                                <span class="sr-only">100% grow</span>
+                                            </span>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
+                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px">1</div>
                                 </td>
                                 <td>
-                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <i class="fa fa-arrow-circle-right" style="color:#5C9BD1;margin-right:3px"></i>
-                                    <a href="">ACU2</a>
-                                </td>
-                                <td>
-                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
-                                </td>
-                                <td>
-                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
-                                </td>
-                                <td>
-                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
+                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px">33%</div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <i class="fa fa-arrow-circle-right" style="color:#5C9BD1;margin-right:3px"></i>
-                                    <a href="">ACU2</a>
+                                    <i class="fa fa-arrow-circle-down" style="color:#36c6d3"></i>
+                                    <a href=""><span>Good</span></a>
                                 </td>
                                 <td>
-                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
+                                    <div class="progress-info">
+                                        <div class="progress" style="margin:0px !important; height:5px; margin-top: 7px !important;">
+                                            <span style="width: 100%;" class="progress-bar progress-bar-success">
+                                                <span class="sr-only">100% grow</span>
+                                            </span>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
+                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px">1</div>
                                 </td>
                                 <td>
-                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <i class="fa fa-arrow-circle-right" style="color:#5C9BD1;margin-right:3px"></i>
-                                    <a href="">ACU2</a>
-                                </td>
-                                <td>
-                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
-                                </td>
-                                <td>
-                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
-                                </td>
-                                <td>
-                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <i class="fa fa-arrow-circle-right" style="color:#5C9BD1;margin-right:3px"></i>
-                                    <a href="">ACU2</a>
-                                </td>
-                                <td>
-                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
-                                </td>
-                                <td>
-                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
-                                </td>
-                                <td>
-                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
+                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px">33%</div>
                                 </td>
                             </tr>
                         </tbody>
@@ -146,8 +104,18 @@
     </div>
 </div>
 <script type="text/javascript">
-    var pieChart = function () {
-        return {
+
+    function DeviceStatusModel(status) {
+        this.status = ko.observable();
+        if (status) this.status = ko.observable(status);
+        this.LastUpdate = ko.observable(moment().format('DD/MM/YYYY hh:mm'));
+    }
+
+
+    var pieChart = function ()
+    {
+        return 
+        {
             initPieChart: function () {
                 var chart = AmCharts.makeChart("chart_6", {
                     "type": "pie",
@@ -155,29 +123,21 @@
                     "fontFamily": 'Open Sans',
                     "color": '#888',
                     "dataProvider": [{
-                        "alarm": "Emergency",
-                        "count": 1
+                        "status": "Good",
+                        "count": 1,
+                        "color": "#36c6d3"
                     }, {
-                        "alarm": "Critical",
-                        "count": 4
+                        "status": "Warning",
+                        "count": 1,
+                        "color": "#F1C40F"
                     }, {
-                        "alarm": "Alert",
-                        "count": 1
-                    }, {
-                        "alarm": "Error",
-                        "count": 1
-                    }, {
-                        "alarm": "Warning",
-                        "count": 2
-                    }, {
-                        "alarm": "Notice",
-                        "count": 3
-                    }, {
-                        "alarm": "Information",
-                        "count": 3
+                        "status": "Unreachable",
+                        "count": 1,
+                        "color": "#ed6b75"
                     }],
                     "valueField": "count",
-                    "titleField": "alarm",
+                    "titleField": "status",
+                    "colorField": "color",
                     "labelRadius": 5,
                     "radius": "20%",
                     "innerRadius": "50%",
@@ -194,7 +154,6 @@
                     chart.invalidateSize();
                 });
             }
-
         }
     }();
 
@@ -202,4 +161,12 @@
         pieChart.initPieChart();
     });
 
+    $(document).ready(function () {
+        $.ajax({
+            url: "http://192.168.1.33:8081/data/dashboard/deviceStatus",
+            success: function (TopCPU) {
+                ko.applyBindings(new TopNCPUUsageModel(TopCPU), document.getElementById('CPUUsageTbl'));
+            }
+        });
+    });
 </script>
