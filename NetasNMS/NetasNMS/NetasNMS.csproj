@@ -6215,7 +6215,25 @@
     <Content Include="Views\Shared\_AlarmOnNEs.cshtml" />
     <Content Include="Views\System\Settings.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
-    <Content Include="Views\Shared\_NetworkDeviceStatus.cshtml" />
+    <Content Include="Views\System\Notification.cshtml" />
+    <Content Include="Views\System\ImportExport.cshtml" />
+    <Content Include="Views\Configration\SubnetManagement.cshtml" />
+    <Content Include="Views\Configration\Configration.cshtml" />
+    <Content Include="Views\Configration\Topology.cshtml" />
+    <Content Include="Views\Configration\FileManagement.cshtml" />
+    <Content Include="Views\Configration\Template.cshtml" />
+    <Content Include="Views\Reporting\NetworkReport.cshtml" />
+    <Content Include="Views\Reporting\AlarmReport.cshtml" />
+    <Content Include="Views\Reporting\InventoryReport.cshtml" />
+    <Content Include="Views\Reporting\WLANReport.cshtml" />
+    <Content Include="Views\ScheduleTasks\DownloadFile.cshtml" />
+    <Content Include="Views\ScheduleTasks\Report.cshtml" />
+    <Content Include="Views\ScheduleTasks\Reboot.cshtml" />
+    <Content Include="Views\Monitor\CurrentAlarms.cshtml" />
+    <Content Include="Views\Monitor\HistoricalAlarms.cshtml" />
+    <Content Include="Views\Monitor\ACNetworkMonitor.cshtml" />
+    <Content Include="Views\Monitor\APNetworkMonitor.cshtml" />
+    <Content Include="Views\Monitor\ClientNetworkMonitor.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -6228,10 +6246,6 @@
     <Folder Include="assets\apps\img\" />
     <Folder Include="assets\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Configration\" />
-    <Folder Include="Views\Monitor\" />
-    <Folder Include="Views\Reporting\" />
-    <Folder Include="Views\ScheduleTasks\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
