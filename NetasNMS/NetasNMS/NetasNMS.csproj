@@ -6203,10 +6203,6 @@
     <Content Include="Views\Shared\_SearchBox.cshtml" />
     <Content Include="Views\Shared\_CpuUsageTable.cshtml" />
     <Content Include="Views\Shared\_MemoryUsageTable.cshtml" />
-    <Content Include="Views\Shared\_TotalAPs.cshtml" />
-    <Content Include="Views\Shared\_ManagedAPs.cshtml" />
-    <Content Include="Views\Shared\_OfflineAPs.cshtml" />
-    <Content Include="Views\Shared\_TotalClient.cshtml" />
     <Content Include="Views\Shared\_WirelessResourceStats.cshtml" />
     <Content Include="Views\Shared\_DeviceResourceStatistics.cshtml" />
     <Content Include="Views\Shared\_CurrentAlarms.cshtml" />
@@ -6235,6 +6231,8 @@
     <Content Include="Views\Monitor\ClientNetworkMonitor.cshtml" />
     <Content Include="Views\Shared\_NetworkDeviceStatus.cshtml" />
     <Content Include="Views\Shared\_UpStreamTrafficAndChannelUsageTable.cshtml" />
+    <Content Include="Views\Shared\_MainDashboardFirstRowStatistics.cshtml" />
+    <Content Include="Views\Shared\_BreadcumbAction.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
