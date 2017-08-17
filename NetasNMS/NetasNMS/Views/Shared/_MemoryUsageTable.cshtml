@@ -63,7 +63,7 @@
 
     function TopNMemoryUsageModel(TopMemory) {
         this.TopNMemory = ko.observableArray([]);
-        this.LastUpdate = ko.observable(moment().format('DD/MM/YYYY hh:mm'));
+        this.LastUpdate = ko.observable(moment().format('DD/MM/YYYY HH:mm'));
         if (TopMemory)
             for (var i = 0; i < TopMemory.length; i++)
                 this.TopNMemory.push(new SetMemoryTableItem(TopMemory[i].ip, TopMemory[i].name, TopMemory[i].value));

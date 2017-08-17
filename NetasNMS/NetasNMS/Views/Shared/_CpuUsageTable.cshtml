@@ -63,7 +63,7 @@
     
     function TopNCPUUsageModel(TopCPU) {
         this.TopNCPU = ko.observableArray([]);
-        this.LastUpdate = ko.observable(moment().format('DD/MM/YYYY hh:mm'));
+        this.LastUpdate = ko.observable(moment().format('DD/MM/YYYY HH:mm'));
         if (TopCPU)
             for (var i = 0; i < TopCPU.length; i++)
                 this.TopNCPU.push(new SetCPUTableItem(TopCPU[i].ip, TopCPU[i].name, TopCPU[i].value));
