@@ -13,46 +13,152 @@
                             <th class="all">Device Name</th>
                             <th class="all">AP Traffic(MB)</th>
                             <th class="all">Radio 0 Channel Usage</th>
-                            <th class="all" style="width:1px;text-align: center;">%</th>
                             <th class="all">Radio 1 Channel Usage</th>
-                            <th class="all" style="width:1px;text-align: center;">%</th>
                         </tr>
                     </thead>
-                    <tbody data-bind="foreach: TopNCPU">
+                    <tbody>
                         <tr>
                             <td>
-                                <i class="fa" data-bind="style: { color: percentageValue() >= 65 ? '#f36a5a' : percentageValue() < 65 && percentageValue() > 35 ? '#5C9BD1': '#2ab4c0' }, css: { 'fa-arrow-circle-up': percentageValue() >= 65, 'fa-arrow-circle-right': percentageValue() < 65 && percentageValue() > 35, 'fa-arrow-circle-down': percentageValue() <= 35 }"></i>
-                                <a href=""><span data-bind="text: name()"></span></a>
+                                <a href=""><span >192.168.1.1</span></a>
                             </td>
                             <td>
-                                <i class="fa" data-bind="style: { color: percentageValue() >= 65 ? '#f36a5a' : percentageValue() < 65 && percentageValue() > 35 ? '#5C9BD1': '#2ab4c0' }, css: { 'fa-arrow-circle-up': percentageValue() >= 65, 'fa-arrow-circle-right': percentageValue() < 65 && percentageValue() > 35, 'fa-arrow-circle-down': percentageValue() <= 35 }"></i>
-                                <a href=""><span data-bind="text: name()"></span></a>
+                                <a href=""><span>366.8</span></a>
                             </td>
                             <td style="padding-bottom:0px;padding-top:0px;">
                                 <div class="dashboard-stat2 " style="background:transparent; padding-bottom:0px;">
-                                    <div class="progress-info">
-                                        <div class="progress">
-                                            <span class="progress-bar progress-bar-success" data-bind="style: { width: function(){ return percentageValue() + '%'; }() }, css: { 'red-haze': percentageValue() >= 65, 'blue-sharp': percentageValue() < 65 && percentageValue() > 35, 'green-sharp': percentageValue() <= 35 }">
+                                    <div style="clear:both;">
+                                        <div class="progress" style="float:left; height:4px; width:85%; margin-left:5px; margin-top:7px;">
+                                            <span style="width: 90%;" class="progress-bar progress-bar-success blue-sharp">
+                                                <span class="sr-only">15% grow</span>
                                             </span>
+                                        </div>
+                                        <div class="status" style="float:left; margin-left:5px;">
+                                            <div style="font-size: 11px; color: #AAB5BC; font-weight: 600; text-transform: uppercase;">100%</div>
                                         </div>
                                     </div>
                                 </div>
                             </td>
-                            <td>
-                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"><span data-bind="text: percentageValue()"></span>%</div>
-                            </td>
                             <td style="padding-bottom:0px;padding-top:0px;">
                                 <div class="dashboard-stat2 " style="background:transparent; padding-bottom:0px;">
-                                    <div class="progress-info">
-                                        <div class="progress">
-                                            <span class="progress-bar progress-bar-success" data-bind="style: { width: function(){ return percentageValue() + '%'; }() }, css: { 'red-haze': percentageValue() >= 65, 'blue-sharp': percentageValue() < 65 && percentageValue() > 35, 'green-sharp': percentageValue() <= 35 }">
+                                    <div style="clear:both;">
+                                        <div class="progress" style="float:left; height:4px; width:85%; margin-left:5px; margin-top:7px;">
+                                            <span style="width: 90%;" class="progress-bar progress-bar-success blue-sharp">
+                                                <span class="sr-only">15% grow</span>
                                             </span>
+                                        </div>
+                                        <div class="status" style="float:left; margin-left:5px;">
+                                            <div style="font-size: 11px; color: #AAB5BC; font-weight: 600; text-transform: uppercase;">100%</div>
                                         </div>
                                     </div>
                                 </div>
                             </td>
+                        </tr>
+                        <tr>
                             <td>
-                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"><span data-bind="text: percentageValue()"></span>%</div>
+                                <a href=""><span>192.168.1.1</span></a>
+                            </td>
+                            <td>
+                                <a href=""><span>366.8</span></a>
+                            </td>
+                            <td style="padding-bottom:0px;padding-top:0px;">
+                                <div class="dashboard-stat2 " style="background:transparent; padding-bottom:0px;">
+                                    <div style="clear:both;">
+                                        <div class="progress" style="float:left; height:4px; width:85%; margin-left:5px; margin-top:7px;">
+                                            <span style="width: 90%;" class="progress-bar progress-bar-success blue-sharp">
+                                                <span class="sr-only">15% grow</span>
+                                            </span>
+                                        </div>
+                                        <div class="status" style="float:left; margin-left:5px;">
+                                            <div style="font-size: 11px; color: #AAB5BC; font-weight: 600; text-transform: uppercase;">100%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="padding-bottom:0px;padding-top:0px;">
+                                <div class="dashboard-stat2 " style="background:transparent; padding-bottom:0px;">
+                                    <div style="clear:both;">
+                                        <div class="progress" style="float:left; height:4px; width:85%; margin-left:5px; margin-top:7px;">
+                                            <span style="width: 90%;" class="progress-bar progress-bar-success blue-sharp">
+                                                <span class="sr-only">15% grow</span>
+                                            </span>
+                                        </div>
+                                        <div class="status" style="float:left; margin-left:5px;">
+                                            <div style="font-size: 11px; color: #AAB5BC; font-weight: 600; text-transform: uppercase;">100%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href=""><span>192.168.1.1</span></a>
+                            </td>
+                            <td>
+                                <a href=""><span>366.8</span></a>
+                            </td>
+                            <td style="padding-bottom:0px;padding-top:0px;">
+                                <div class="dashboard-stat2 " style="background:transparent; padding-bottom:0px;">
+                                    <div style="clear:both;">
+                                        <div class="progress" style="float:left; height:4px; width:85%; margin-left:5px; margin-top:7px;">
+                                            <span style="width: 90%;" class="progress-bar progress-bar-success blue-sharp">
+                                                <span class="sr-only">15% grow</span>
+                                            </span>
+                                        </div>
+                                        <div class="status" style="float:left; margin-left:5px;">
+                                            <div style="font-size: 11px; color: #AAB5BC; font-weight: 600; text-transform: uppercase;">100%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="padding-bottom:0px;padding-top:0px;">
+                                <div class="dashboard-stat2 " style="background:transparent; padding-bottom:0px;">
+                                    <div style="clear:both;">
+                                        <div class="progress" style="float:left; height:4px; width:85%; margin-left:5px; margin-top:7px;">
+                                            <span style="width: 90%;" class="progress-bar progress-bar-success blue-sharp">
+                                                <span class="sr-only">15% grow</span>
+                                            </span>
+                                        </div>
+                                        <div class="status" style="float:left; margin-left:5px;">
+                                            <div style="font-size: 11px; color: #AAB5BC; font-weight: 600; text-transform: uppercase;">100%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href=""><span>192.168.1.1</span></a>
+                            </td>
+                            <td>
+                                <a href=""><span>366.8</span></a>
+                            </td>
+                            <td style="padding-bottom:0px;padding-top:0px;">
+                                <div class="dashboard-stat2 " style="background:transparent; padding-bottom:0px;">
+                                    <div style="clear:both;">
+                                        <div class="progress" style="float:left; height:4px; width:85%; margin-left:5px; margin-top:7px;">
+                                            <span style="width: 90%;" class="progress-bar progress-bar-success blue-sharp">
+                                                <span class="sr-only">15% grow</span>
+                                            </span>
+                                        </div>
+                                        <div class="status" style="float:left; margin-left:5px;">
+                                            <div style="font-size: 11px; color: #AAB5BC; font-weight: 600; text-transform: uppercase;">100%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="padding-bottom:0px;padding-top:0px;">
+                                <div class="dashboard-stat2 " style="background:transparent; padding-bottom:0px;">
+                                    <div style="clear:both;">
+                                        <div class="progress" style="float:left; height:4px; width:85%; margin-left:5px; margin-top:7px;">
+                                            <span style="width: 90%;" class="progress-bar progress-bar-success blue-sharp">
+                                                <span class="sr-only">15% grow</span>
+                                            </span>
+                                        </div>
+                                        <div class="status" style="float:left; margin-left:5px;">
+                                            <div style="font-size: 11px; color: #AAB5BC; font-weight: 600; text-transform: uppercase;">100%</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                     </tbody>
