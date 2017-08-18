@@ -1,4 +1,4 @@
-﻿<div class="col-lg-6 col-xs-12 col-sm-12">
+﻿<div id="currentAlarm" class="col-lg-6 col-xs-12 col-sm-12">
     <div class="portlet light">
         <div class="portlet-title">
             <div class="caption ">
@@ -16,7 +16,7 @@
 <script type="text/javascript">
     var BarChart = function () {
         return {
-            initAmChart3: function () {
+            initAmChart3: function (AlarmCountViewModel) {
                 if (typeof (AmCharts) === 'undefined' || $('#dashboard_amchart_3').size() === 0) {
                     return;
                 }
@@ -28,31 +28,31 @@
                     "dataProvider": [
                         {
                             "alarm": "Emergency",
-                            "count": 2,
+                            "count": AlarmCountViewModel.Emergency(),
                             "color": "#FF0F00"
                         }, {
                             "alarm": "Critical",
-                            "count": 3,
+                            "count": AlarmCountViewModel.Critical(),
                             "color": "#FF6600"
                         }, {
                             "alarm": "Alert",
-                            "count": 5,
+                            "count": AlarmCountViewModel.Alert(),
                             "color": "#FF9E01"
                         }, {
                             "alarm": "Error",
-                            "count": 8,
+                            "count": AlarmCountViewModel.Error(),
                             "color": "#FCD202"
                         }, {
                             "alarm": "Warning",
-                            "count": 20,
+                            "count": AlarmCountViewModel.Warning(),
                             "color": "#FCD202"
                         }, {
                             "alarm": "Notice",
-                            "count": 120,
+                            "count": AlarmCountViewModel.Notice(),
                             "color": "#FCD202"
                         }, {
                             "alarm": "Information",
-                            "count": 215,
+                            "count": AlarmCountViewModel.Information(),
                             "color": "#FCD202"
                         }
                     ],
@@ -94,7 +94,30 @@
         }
     }();
 
-    jQuery(document).ready(function () {
-        BarChart.initAmChart3(); // init metronic core componets
+    $(document).ready(function () {
+
+        var AlarmCountViewModel = {
+            Emergency: ko.observable(),
+            Critical: ko.observable(),
+            Alert: ko.observable(),
+            Error: ko.observable(),
+            Warning: ko.observable(),
+            Notice: ko.observable(),
+            Information: ko.observable()
+        }
+
+        var AlarmCountViewModel = ko.mapping.fromJS(
+        {
+            'Emergency': 1,
+            'Critical': 15,
+            'Alert': 7,
+            'Error': 11,
+            'Warning': 30,
+            'Notice': 10,
+            'Information': 50
+        }, {}, AlarmCountViewModel);
+        ko.applyBindings(AlarmCountViewModel, document.getElementById('currentAlarm'));
+
+        BarChart.initAmChart3(AlarmCountViewModel); // init metronic core componets
     });
 </script>
