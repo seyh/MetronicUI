@@ -2,90 +2,51 @@
         <div class="portlet light ">
             <div class="portlet-body">
                 <div class="row">
-                    <div class="col-lg-6 col-xs-12 col-sm-12">
+                    <div id="acstatus" class="col-lg-6 col-xs-12 col-sm-12">
                         <span class="caption-subject bold font-dark" style="font-size:14px; border-bottom:1px solid #eee; padding-bottom:10px; margin-bottom:15px; display:block">
                             <i class="fa fa-wifi font-dark"></i>
                             ACCESS CONTROLLER STATISTICS
-                            <span class="thin" style="color:#aaa; float:right">Total Count : <span class="bold" style="color:red">34</span></span>
+                            <span class="thin" style="color:#aaa; float:right">Total Count : <span class="bold" style="color:red"  data-bind="text: total()"></span></span>
                         </span>
-                        <div>
-                            <div class="col-md-3">
+                        <div style="height:150px;">
+                            <div class="col-md-5">
                                 <div class="easy-pie-chart">
-                                    <div class="number transactions" data-percent="55">
-                                        <span>55</span>%
+                                    <div class="number transactions aconline" data-bind="attr: { 'data-percent': onlinepercentage() }">
+                                        <span style="margin-left: 35px; padding-top: 20px; display: block; font-size: 20px;" data-bind="text: Online()"></span>
                                     </div>
-                                    <span>Online</span>
+                                    <span style="display: block; margin-left: 35px; margin-top: 55px;">Online</span>
                                 </div>
                             </div>
-                            <div class="margin-bottom-10 visible-sm"> </div>
-                            <div class="col-md-3">
+                            <div class="col-md-7">
                                 <div class="easy-pie-chart">
-                                    <div class="number visits" data-percent="85">
-                                        <span>85</span>%
+                                    <div class="number transactions acoffline" data-bind="attr: { 'data-percent': offlinepercentage() }">
+                                        <span style="margin-left: 35px; padding-top: 20px; display: block; font-size: 20px;" data-bind="text: Offline()"></span>
                                     </div>
-                                    <span>Offline</span>
+                                    <span style="display: block; margin-left: 35px; margin-top: 55px;">Offline</span>
                                 </div>
                             </div>
-                            <div class="margin-bottom-10 visible-sm"> </div>
-                            <div class="col-md-3">
-                                <div class="easy-pie-chart">
-                                    <div class="number bounce" data-percent="46">
-                                        <span>46</span>%
-                                    </div>
-                                    <span>Unmanaged</span>
+                    </div>
+                </div>
+                <div id="apstatus" class="col-lg-6 col-xs-12 col-sm-12">
+                    <span class="caption-subject bold font-dark" style="border-bottom:1px solid #eee; padding-bottom:10px; margin-bottom:15px; display:block">
+                        <i class="fa fa-signal font-dark"></i>    
+                    ACCESS POINT STATISTICS
+                        <span class="thin" style="font-size:14px; color:#aaa; float:right">Total Count : <span class="bold" style="color:red">4399</span></span></span>
+                    <div style="height:150px;">
+                        <div class="col-md-5">
+                            <div class="easy-pie-chart">
+                                <div class="number transactions apmanaged" data-percent="23">
+                                    <span style="margin-left: 35px; padding-top: 20px; display: block; font-size: 20px;">42</span>
                                 </div>
-                            </div>
-                            <div class="margin-bottom-10 visible-sm"> </div>
-                            <div class="col-md-3">
-                                <div class="easy-pie-chart">
-                                    <div class="number bounce" data-percent="46">
-                                        <span>46</span>%
-                                    </div>
-                                    <span>SNMP Unreachable</span>
-                                </div>
+                                <span style="display: block; margin-left: 35px; margin-top: 55px;">Managed</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6 col-xs-12 col-sm-12">
-                        <span class="caption-subject bold font-dark" style="border-bottom:1px solid #eee; padding-bottom:10px; margin-bottom:15px; display:block">
-                            <i class="fa fa-signal font-dark"></i>    
-                        ACCESS POINT STATISTICS
-                            <span class="thin" style="font-size:14px; color:#aaa; float:right">Total Count : <span class="bold" style="color:red">4399</span></span></span>
-                        <div>
-                            <div class="col-md-3">
-                                <div class="easy-pie-chart">
-                                    <div class="number transactions" data-percent="55">
-                                        <span>55</span>%
-                                    </div>
-                                    <span>Online</span>
+                        <div class="col-md-7">
+                            <div class="easy-pie-chart">
+                                <div class="number transactions apconfail" data-percent="23">
+                                    <span style="margin-left: 35px; padding-top: 20px; display: block; font-size: 20px;">10</span>
                                 </div>
-                            </div>
-                            <div class="margin-bottom-10 visible-sm"> </div>
-                            <div class="col-md-3">
-                                <div class="easy-pie-chart">
-                                    <div class="number visits" data-percent="85">
-                                        <span>85</span>%
-                                    </div>
-                                    <span>Offline</span>
-                                </div>
-                            </div>
-                            <div class="margin-bottom-10 visible-sm"> </div>
-                            <div class="col-md-3">
-                                <div class="easy-pie-chart">
-                                    <div class="number bounce" data-percent="46">
-                                        <span>46</span>%
-                                    </div>
-                                    <span>Unmanaged</span>
-                                </div>
-                            </div>
-                            <div class="margin-bottom-10 visible-sm"> </div>
-                            <div class="col-md-3">
-                                <div class="easy-pie-chart">
-                                    <div class="number bounce" data-percent="46">
-                                        <span>46</span>%
-                                    </div>
-                                    <span>SNMP Unreachable</span>
-                                </div>
+                                <span style="display: block; margin-left: 35px; margin-top: 55px;">Connection Failed</span>
                             </div>
                         </div>
                     </div>
@@ -102,39 +63,50 @@
                     return;
                 }
 
-                $('.easy-pie-chart .number.transactions').easyPieChart({
+                $('.easy-pie-chart .number.transactions.aconline').easyPieChart({
                     animate: 1000,
-                    size: 75,
-                    lineWidth: 3,
-                    barColor: App.getBrandColor('yellow')
-                });
-
-                $('.easy-pie-chart .number.visits').easyPieChart({
-                    animate: 1000,
-                    size: 75,
-                    lineWidth: 3,
+                    size: 120,
+                    lineWidth: 8,
                     barColor: App.getBrandColor('green')
                 });
 
-                $('.easy-pie-chart .number.bounce').easyPieChart({
+                $('.easy-pie-chart .number.transactions.acoffline').easyPieChart({
                     animate: 1000,
-                    size: 75,
-                    lineWidth: 3,
+                    size: 120,
+                    lineWidth: 8,
                     barColor: App.getBrandColor('red')
                 });
 
-                $('.easy-pie-chart-reload').click(function () {
-                    $('.easy-pie-chart .number').each(function () {
-                        var newValue = Math.floor(100 * Math.random());
-                        $(this).data('easyPieChart').update(newValue);
-                        $('span', this).text(newValue);
-                    });
+                $('.easy-pie-chart .number.transactions.apmanaged').easyPieChart({
+                    animate: 1000,
+                    size: 120,
+                    lineWidth: 8,
+                    barColor: App.getBrandColor('blue')
                 });
-            },
+
+                $('.easy-pie-chart .number.transactions.apconfail').easyPieChart({
+                    animate: 1000,
+                    size: 120,
+                    lineWidth: 8,
+                    barColor: App.getBrandColor('red')
+                });
+            }
         }
     }();
 
-    jQuery(document).ready(function () {
+    $(document).ready(function () {
+
+        var AcStatusViewModel = {
+            Online: ko.observable(),
+            Offline: ko.observable()
+        }
+        ko.mapping.fromJS({ 'Online': 1100, 'Offline': 100 }, {}, AcStatusViewModel);
+        AcStatusViewModel.total = ko.computed(function () { return this.Online() + this.Offline() }, AcStatusViewModel);
+        AcStatusViewModel.onlinepercentage = ko.computed(function () { return (this.Online() / (this.Online() + this.Offline())) * 100 }, AcStatusViewModel);
+        AcStatusViewModel.offlinepercentage = ko.computed(function () { return (this.Offline() / (this.Online() + this.Offline())) * 100 }, AcStatusViewModel);
+
+        ko.applyBindings(AcStatusViewModel, document.getElementById('acstatus'));
+
         PieCharts.initEasyPieCharts(); // init metronic core componets
     });
 </script>

@@ -4680,6 +4680,7 @@
     <Content Include="assets\global\scripts\app.min.js" />
     <Content Include="assets\global\scripts\datatable.js" />
     <Content Include="assets\global\scripts\datatable.min.js" />
+    <Content Include="assets\global\scripts\knockoutJS.mapping.js" />
     <Content Include="assets\layouts\global\scripts\cookie-consent.js" />
     <Content Include="assets\layouts\global\scripts\cookie-consent.min.js" />
     <Content Include="assets\layouts\global\scripts\hor-timeline.js" />
@@ -6233,7 +6234,6 @@
     <Content Include="Views\Shared\_UpStreamTrafficAndChannelUsageTable.cshtml" />
     <Content Include="Views\Shared\_MainDashboardFirstRowStatistics.cshtml" />
     <Content Include="Views\Shared\_BreadcumbAction.cshtml" />
-    <Content Include="Views\Shared\_ClientRadioTypes.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
