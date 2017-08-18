@@ -6234,6 +6234,7 @@
     <Content Include="Views\Shared\_UpStreamTrafficAndChannelUsageTable.cshtml" />
     <Content Include="Views\Shared\_MainDashboardFirstRowStatistics.cshtml" />
     <Content Include="Views\Shared\_BreadcumbAction.cshtml" />
+    <Content Include="Views\Shared\_ClientRadioTypes.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
