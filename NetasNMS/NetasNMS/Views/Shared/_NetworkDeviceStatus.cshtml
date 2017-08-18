@@ -160,8 +160,12 @@
             url: "http://192.168.1.33:8081/data/dashboard/deviceStatus",
             success: function (status) {
                 ko.mapping.fromJS(status, {}, statusViewModel);
-                pieChart.initPieChart(statusViewModel);
+                if (!statusViewModel.Good()) statusViewModel.Good(0);
+                if (!statusViewModel.Warning()) statusViewModel.Warning(0);
+                if (!statusViewModel.Unreachable()) statusViewModel.Unreachable(0);
                 ko.applyBindings(statusViewModel, document.getElementById('networkdevicestatus'));
+
+                pieChart.initPieChart(statusViewModel);
             }
         });
     });
