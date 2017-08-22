@@ -45,160 +45,251 @@
         </div>
 </div>*@
 <!-- END TOTAL WLC and APs-->
+<div id="acStatusFirstRow">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="dashboard-stat2 ">
+            <div class="display">
+                <div class="number">
+                    <h3 class="font-blue-sharp">
+                        <span data-counter="counterup" data-bind="attr: { 'data-value': Total() }">0</span>
+                    </h3>
+                    <small>TOTAL WLC</small>
+                </div>
+                <div class="icon">
+                    <i class="icon-pie-chart"></i>
+                </div>
+            </div>
+            <div class="progress-info">
+                <div class="progress">
+                    <span style="width: 100%;" class="progress-bar progress-bar-success blue-sharp">
+                        <span class="sr-only">100% progress</span>
+                    </span>
+                </div>
+                <div class="status">
+                    <div class="status-title" style="font-size:10px"> progress </div>
+                    <div class="status-number"> 100% </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="dashboard-stat2 ">
+            <div class="display">
+                <div class="number">
+                    <h3 class="font-green-sharp">
+                        <span data-counter="counterup" data-bind="attr: { 'data-value': Online() }">0</span>
+                    </h3>
+                    <small>MANAGED WLC</small>
+                </div>
+                <div class="icon">
+                    <i class="icon-like"></i>
+                </div>
+            </div>
+            <div class="progress-info">
+                <div class="progress">
+                    <span data-bind="style : {width:  Online() }" style="width: 76%;" class="progress-bar progress-bar-success green-sharp">
+                        <span class="sr-only"><span data-bind="text : Online()"></span>% progress</span>
+                    </span>
+                </div>
+                <div class="status">
+                    <div class="status-title" style="font-size:10px"> progress </div>
+                    <div class="status-number"><span data-bind="text : Online()"></span>%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="dashboard-stat2 ">
+            <div class="display">
+                <div class="number">
+                    <h3 class="font-red-haze">
+                        <span data-counter="counterup" data-value="7800">0</span>
+                    </h3>
+                    <small>OFFLINE WLC</small>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-power-off"></i>
+                </div>
+            </div>
+            <div class="progress-info">
+                <div class="progress">
+                    <span style="width: 76%;" class="progress-bar progress-bar-success red-haze">
+                        <span class="sr-only">76% progress</span>
+                    </span>
+                </div>
+                <div class="status">
+                    <div class="status-title" style="font-size:10px"> progress </div>
+                    <div class="status-number"> 76% </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="dashboard-stat2 ">
+            <div class="display">
+                <div class="number">
+                    <h3 class="font-blue-dark">
+                        <span data-counter="counterup" data-value="7800">0</span>
+                    </h3>
+                    <small>TOTAL THROUGHTPUT</small>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-floppy-o"></i>
+                </div>
+            </div>
+            <div class="progress-info">
+                <div class="progress">
+                    <span style="width: 76%;" class="progress-bar progress-bar-success blue-dark">
+                        <span class="sr-only">76% progress</span>
+                    </span>
+                </div>
+                <div class="status">
+                    <div class="status-title" style="font-size:10px"> progress </div>
+                    <div class="status-number"> 76% </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
-    <div class="dashboard-stat2 ">
-        <div class="display">
-            <div class="number">
-                <h3 class="font-blue-dark">
-                    <span data-counter="counterup" data-value="7800">0</span>
-                </h3>
-                <small>TOTAL WLC</small>
+<div id="apStatusFirstRow">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="dashboard-stat2 ">
+            <div class="display">
+                <div class="number">
+                    <h3 class="font-blue-dark">
+                        <span data-counter="counterup" data-value="7800">0</span>
+                    </h3>
+                    <small>TOTAL AP</small>
+                </div>
+                <div class="icon">
+                    <i class="icon-pie-chart"></i>
+                </div>
             </div>
-            <div class="icon">
-                <i class="icon-pie-chart"></i>
+            <div class="progress-info">
+                <div class="progress">
+                    <span style="width: 76%;" class="progress-bar progress-bar-success blue-dark">
+                        <span class="sr-only">76% progress</span>
+                    </span>
+                </div>
+                <div class="status">
+                    <div class="status-title" style="font-size:10px"> progress </div>
+                    <div class="status-number"> 76% </div>
+                </div>
             </div>
         </div>
-        <div class="progress-info">
-            <div class="progress">
-                <span style="width: 76%;" class="progress-bar progress-bar-success blue-dark">
-                    <span class="sr-only">76% progress</span>
-                </span>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="dashboard-stat2 ">
+            <div class="display">
+                <div class="number">
+                    <h3 class="font-green-sharp">
+                        <span data-counter="counterup" data-value="7800">0</span>
+                    </h3>
+                    <small>MANAGED AP</small>
+                </div>
+                <div class="icon">
+                    <i class="icon-like"></i>
+                </div>
             </div>
-            <div class="status">
-                <div class="status-title" style="font-size:10px"> progress </div>
-                <div class="status-number"> 76% </div>
+            <div class="progress-info">
+                <div class="progress">
+                    <span style="width: 76%;" class="progress-bar progress-bar-success green-sharp">
+                        <span class="sr-only">76% progress</span>
+                    </span>
+                </div>
+                <div class="status">
+                    <div class="status-title" style="font-size:10px"> progress </div>
+                    <div class="status-number"> 76% </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="dashboard-stat2 ">
+            <div class="display">
+                <div class="number">
+                    <h3 class="font-red-haze">
+                        <span data-counter="counterup" data-value="7800">0</span>
+                    </h3>
+                    <small>OFFLINE AP</small>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-power-off"></i>
+                </div>
+            </div>
+            <div class="progress-info">
+                <div class="progress">
+                    <span style="width: 76%;" class="progress-bar progress-bar-success red-haze">
+                        <span class="sr-only">76% progress</span>
+                    </span>
+                </div>
+                <div class="status">
+                    <div class="status-title" style="font-size:10px"> progress </div>
+                    <div class="status-number"> 76% </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="dashboard-stat2 ">
+            <div class="display">
+                <div class="number">
+                    <h3 class="font-blue-dark">
+                        <span data-counter="counterup" data-value="7800">0</span>
+                    </h3>
+                    <small>TOTAL CLIENT</small>
+                </div>
+                <div class="icon">
+                    <i class="icon-user"></i>
+                </div>
+            </div>
+            <div class="progress-info">
+                <div class="progress">
+                    <span style="width: 76%;" class="progress-bar progress-bar-success blue-dark">
+                        <span class="sr-only">76% progress</span>
+                    </span>
+                </div>
+                <div class="status">
+                    <div class="status-title" style="font-size:10px"> progress </div>
+                    <div class="status-number"> 76% </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
-    <div class="dashboard-stat2 ">
-        <div class="display">
-            <div class="number">
-                <h3 class="font-green-sharp">
-                    <span data-counter="counterup" data-value="7800">0</span>
-                </h3>
-                <small>MANAGED WLC</small>
-            </div>
-            <div class="icon">
-                <i class="icon-pie-chart"></i>
-            </div>
-        </div>
-        <div class="progress-info">
-            <div class="progress">
-                <span style="width: 76%;" class="progress-bar progress-bar-success green-sharp">
-                    <span class="sr-only">76% progress</span>
-                </span>
-            </div>
-            <div class="status">
-                <div class="status-title" style="font-size:10px"> progress </div>
-                <div class="status-number"> 76% </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
-    <div class="dashboard-stat2 ">
-        <div class="display">
-            <div class="number">
-                <h3 class="font-red-haze">
-                    <span data-counter="counterup" data-value="7800">0</span>
-                </h3>
-                <small>OFFLINE WLC</small>
-            </div>
-            <div class="icon">
-                <i class="icon-pie-chart"></i>
-            </div>
-        </div>
-        <div class="progress-info">
-            <div class="progress">
-                <span style="width: 76%;" class="progress-bar progress-bar-success red-haze">
-                    <span class="sr-only">76% progress</span>
-                </span>
-            </div>
-            <div class="status">
-                <div class="status-title" style="font-size:10px"> progress </div>
-                <div class="status-number"> 76% </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
-    <div class="dashboard-stat2 ">
-        <div class="display">
-            <div class="number">
-                <h3 class="font-blue-dark">
-                    <span data-counter="counterup" data-value="7800">0</span>
-                </h3>
-                <small>TOTAL AP</small>
-            </div>
-            <div class="icon">
-                <i class="icon-pie-chart"></i>
-            </div>
-        </div>
-        <div class="progress-info">
-            <div class="progress">
-                <span style="width: 76%;" class="progress-bar progress-bar-success blue-dark">
-                    <span class="sr-only">76% progress</span>
-                </span>
-            </div>
-            <div class="status">
-                <div class="status-title" style="font-size:10px"> progress </div>
-                <div class="status-number"> 76% </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
-    <div class="dashboard-stat2 ">
-        <div class="display">
-            <div class="number">
-                <h3 class="font-green-sharp">
-                    <span data-counter="counterup" data-value="7800">0</span>
-                </h3>
-                <small>MANAGED AP</small>
-            </div>
-            <div class="icon">
-                <i class="icon-pie-chart"></i>
-            </div>
-        </div>
-        <div class="progress-info">
-            <div class="progress">
-                <span style="width: 76%;" class="progress-bar progress-bar-success green-sharp">
-                    <span class="sr-only">76% progress</span>
-                </span>
-            </div>
-            <div class="status">
-                <div class="status-title" style="font-size:10px"> progress </div>
-                <div class="status-number"> 76% </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
-    <div class="dashboard-stat2 ">
-        <div class="display">
-            <div class="number">
-                <h3 class="font-red-haze">
-                    <span data-counter="counterup" data-value="7800">0</span>
-                </h3>
-                <small>OFFLINE AP</small>
-            </div>
-            <div class="icon">
-                <i class="icon-pie-chart"></i>
-            </div>
-        </div>
-        <div class="progress-info">
-            <div class="progress">
-                <span style="width: 76%;" class="progress-bar progress-bar-success red-haze">
-                    <span class="sr-only">76% progress</span>
-                </span>
-            </div>
-            <div class="status">
-                <div class="status-title" style="font-size:10px"> progress </div>
-                <div class="status-number"> 76% </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+<script src="../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        //AC Part
+        var fAcStatusViewModel = {
+            Online: ko.observable(),
+            Offline: ko.observable()
+        }
+        ko.mapping.fromJS({ 'Online': 1100, 'Offline': 100 }, {}, fAcStatusViewModel);
+        if (!fAcStatusViewModel.Online()) fAcStatusViewModel.Online(0);
+        if (!fAcStatusViewModel.Offline()) fAcStatusViewModel.Offline(0);
+
+        fAcStatusViewModel.Total = ko.computed(function () { return this.Online() + this.Offline() }, fAcStatusViewModel);
+        fAcStatusViewModel.OnlinePercentage = ko.computed(function () { return (this.Online() / (this.Online() + this.Offline())) * 100 }, fAcStatusViewModel);
+        fAcStatusViewModel.OfflinePercentage = ko.computed(function () { return (this.Offline() / (this.Online() + this.Offline())) * 100 }, fAcStatusViewModel);
+        ko.applyBindings(fAcStatusViewModel, document.getElementById('acStatusFirstRow'));
+
+        //AP Part
+        var fApStatusViewModel = {
+            Managed: ko.observable(),
+            Connection_Failed: ko.observable()
+        }
+        ko.mapping.fromJS({ 'Managed': 42000, 'Connection_Failed': 100 }, {}, fApStatusViewModel);
+        if (!fApStatusViewModel.Managed()) fApStatusViewModel.Managed(0);
+        if (!fApStatusViewModel.Connection_Failed()) fApStatusViewModel.Connection_Failed(0);
+
+        fApStatusViewModel.Total = ko.computed(function () { return this.Managed() + this.Connection_Failed() }, fApStatusViewModel);
+        fApStatusViewModel.ManagedPercentage = ko.computed(function () { return (this.Managed() / (this.Managed() + this.Connection_Failed())) * 100 }, fApStatusViewModel);
+        fApStatusViewModel.ConnectionFailedPercentage = ko.computed(function () { return (this.Connection_Failed() / (this.Managed() + this.Connection_Failed())) * 100 }, fApStatusViewModel);
+        ko.applyBindings(fApStatusViewModel, document.getElementById('apStatusFirstRow'));
+       
+    });
+</script>
