@@ -20,7 +20,7 @@
                     <span class="caption-subject font-dark" style="border-bottom:1px solid #eee; padding-bottom:10px; margin-bottom:15px; display:block">
                         <span class="thin" style="font-size:14px; color:#aaa;">
                             Total Count :
-                            <span class="bold" style="color:red"><span data-bind="text: Unreachable() + Warning() + Good()"></span></span>
+                            <span class="bold" style="color:red"><span data-bind="text: (GHz24() + GHz5())"></span></span>
                         </span>
                     </span>
                     <table class="table table-striped table-bordered table-hover dt-responsive" width="100" id="sample_1">
@@ -38,10 +38,10 @@
                                     <a href=""><span>2,4G</span></a>
                                 </td>
                                 <td>
-                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"><span data-bind="text: Unreachable()"></span></div>
+                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"><span data-bind="text: GHz24()"></span></div>
                                 </td>
                                 <td>
-                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"><span data-bind="text: ((Unreachable()/(Unreachable() + Warning() + Good())) * 100).toFixed(2)"></span>%</div>
+                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"><span data-bind="text: ((GHz24()/(GHz24() + GHz5())) * 100).toFixed(2)"></span>%</div>
                                 </td>
                             </tr>
                             <tr>
@@ -50,10 +50,10 @@
                                     <a href=""><span>5G</span></a>
                                 </td>
                                 <td>
-                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"><span data-bind="text: Warning()"></span></div>
+                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"><span data-bind="text: GHz5()"></span></div>
                                 </td>
                                 <td>
-                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"><span data-bind="text: ((Warning()/(Unreachable() + Warning() + Good())) * 100).toFixed(2)"></span>%</div>
+                                    <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"><span data-bind="text: ((GHz5()/(GHz24() + GHz5())) * 100).toFixed(2)"></span>%</div>
                                 </td>
                             </tr>
                         </tbody>
@@ -65,21 +65,21 @@
 </div>
 
 <script type="text/javascript">
-    var pieChartRadio = function () {
+    var pieChartRadioType = function () {
         return {
-            initPieChart: function () {
-                var chart = AmCharts.makeChart("chart_66", {
+            initPieChart: function (status) {
+                var chart = AmCharts.makeChart("chart_6", {
                     "type": "pie",
                     "theme": "light",
                     "fontFamily": 'Open Sans',
                     "color": '#888',
                     "dataProvider": [{
-                        "status": "5G",
-                        "count": 5,
+                        "status": "2.4G",
+                        "count": status.GHz24(),
                         "color": "#36c6d3"
                     }, {
-                        "status": "2,4G",
-                        "count": 4,
+                        "status": "5G",
+                        "count": status.GHz5(),
                         "color": "#F1C40F"
                     }],
                     "valueField": "count",
@@ -97,7 +97,7 @@
                     }
                 });
 
-                $('#chart_66').closest('.portlet').find('.fullscreen').click(function () {
+                $('#chart_6').closest('.portlet').find('.fullscreen').click(function () {
                     chart.invalidateSize();
                 });
             }
@@ -105,23 +105,22 @@
     }();
 
     $(document).ready(function () {
-        /*
-        var radiotypeViewModel = {
-            5 GHz: ko.observable(),
-            2.4 GHz: ko.observable(),
+        var statusRadioTypesViewModel = {
+            GHz24 : ko.observable(),
+            GHz5 : ko.observable(),
             LastUpdate: ko.observable(moment().format('DD/MM/YYYY HH:mm'))
         }
 
         $.ajax({
             url: "http://192.168.1.33:8081/data/dashboard/clientRadioType",
             success: function (status) {
-                ko.mapping.fromJS(status, {}, radiotypeViewModel);
-                pieChart.initPieChart(radiotypeViewModel);
-                ko.applyBindings(radiotypeViewModel, document.getElementById('clientradiotypes'));
+                ko.mapping.fromJS(status, {}, statusRadioTypesViewModel);
+                if (!statusRadioTypesViewModel.GHz24()) statusRadioTypesViewModel.GHz24(0);
+                if (!statusRadioTypesViewModel.GHz5()) statusRadioTypesViewModel.GHz5(0);
+                ko.applyBindings(statusRadioTypesViewModel, document.getElementById('clientradiotypes'));
+
+                pieChartRadioType.initPieChart(statusRadioTypesViewModel);
             }
         });
-        */
-
-        pieChartRadio.initPieChart();
     });
 </script>

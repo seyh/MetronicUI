@@ -1,4 +1,4 @@
-﻿<div id="DeviceResourceStatisticsTbl" class="col-lg-6 col-xs-12 col-sm-12">
+﻿<div id="DeviceResourceTbl" class="col-lg-6 col-xs-12 col-sm-12">
     <div class="portlet light ">
         <div class="portlet-title">
             <div class="caption" style="width: 100%; border-bottom: 1px solid #eee; margin-bottom: 15px;">
@@ -19,61 +19,85 @@
                         <tr>
                             <td>
                                 <i class="fa fa-arrow-circle-right" style="color:#5C9BD1;margin-right:3px"></i>
-                                <a href="">192.168.68.33</a>
+                                <a href="">Switch</a>
                             </td>
                             <td>
-                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
+                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"><span data-bind="text: Switch()"></span></div>
                             </td>
                             <td>
-                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <i class="fa fa-arrow-circle-right" style="color:#5C9BD1;margin-right:3px"></i>
-                                <a href="">192.168.68.33</a>
-                            </td>
-                            <td>
-                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
-                            </td>
-                            <td>
-                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
+                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"><span data-bind="text: SwitchPercentage()"></span>%</div>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <i class="fa fa-arrow-circle-right" style="color:#5C9BD1;margin-right:3px"></i>
-                                <a href="">192.168.68.33</a>
+                                <a href="">Access Point</a>
                             </td>
                             <td>
-                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
+                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"><span data-bind="text: Access_Point()"></span></div>
                             </td>
                             <td>
-                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <i class="fa fa-arrow-circle-right" style="color:#5C9BD1;margin-right:3px"></i>
-                                <a href="">192.168.68.33</a>
-                            </td>
-                            <td>
-                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
-                            </td>
-                            <td>
-                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
+                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"><span data-bind="text: Access_PointPercentage()"></span>%</div>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <i class="fa fa-arrow-circle-right" style="color:#5C9BD1;margin-right:3px"></i>
-                                <a href="">192.168.68.33</a>
+                                <a href="">Access Controller</a>
                             </td>
                             <td>
-                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
+                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"><span data-bind="text: Access_Controller()"></span></div>
                             </td>
                             <td>
-                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"> 50% </div>
+                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"><span data-bind="text: Access_ControllerPercentage()"></span>%</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="fa fa-arrow-circle-right" style="color:#5C9BD1;margin-right:3px"></i>
+                                <a href="">Computer</a>
+                            </td>
+                            <td>
+                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"><span data-bind="text: Computer()"></span></div>
+                            </td>
+                            <td>
+                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"><span data-bind="text: ComputerPercentage()"></span>%</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="fa fa-arrow-circle-right" style="color:#5C9BD1;margin-right:3px"></i>
+                                <a href="">Unmanaged</a>
+                            </td>
+                            <td>
+                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"><span data-bind="text: Unmanaged()"></span></div>
+                            </td>
+                            <td>
+                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"><span data-bind="text: UnmanagedPercentage()"></span>%</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="fa fa-arrow-circle-right" style="color:#5C9BD1;margin-right:3px"></i>
+                                <a href="">Linux</a>
+                            </td>
+                            <td>
+                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"><span data-bind="text: Linux()"></span></div>
+                            </td>
+                            <td>
+                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"><span data-bind="text: LinuxPercentage()"></span>%</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="fa fa-arrow-circle-right" style="color:#5C9BD1;margin-right:3px"></i>
+                                <a href="">Router</a>
+                            </td>
+                            <td>
+                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"><span data-bind="text: Router()"></span></div>
+                            </td>
+                            <td>
+                                <div class="status-number" style="text-align:center; font-size:12px; margin-top:3px"><span data-bind="text: RouterPercentage()"></span>%</div>
                             </td>
                         </tr>
                     </tbody>
@@ -85,27 +109,61 @@
 
 <script src="../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
 
-@*<script type="text/javascript">
+<script type="text/javascript">
     $(document).ready(function () {
+        var device = {
+            'Switch': 1,
+            'Access_Point': 2,
+            'Access_Controller': 1,
+            'Computer': 1,
+            'Unmanaged': 1,
+            'Linux': 1,
+            'Router': 1
+        }
+
+        var DeviceTypeViewModel = {
+            Switch: ko.observable(),
+            Access_Point: ko.observable(),
+            Access_Controller: ko.observable(),
+            Computer: ko.observable(),
+            Unmanaged: ko.observable(),
+            Linux: ko.observable(),
+            Router: ko.observable()
+        }
+
+        ko.mapping.fromJS(device, {}, DeviceTypeViewModel);
+        DeviceTypeViewModel.Total = ko.computed(function () { return this.Switch() + this.Access_Point() + this.Access_Controller() + this.Computer() + this.Unmanaged() + this.Linux() + this.Router() }, DeviceTypeViewModel);
+        DeviceTypeViewModel.SwitchPercentage = ko.computed(function () { return (this.Switch() / DeviceTypeViewModel.Total()) * 100 }, DeviceTypeViewModel);
+        DeviceTypeViewModel.Access_PointPercentage = ko.computed(function () { return (this.Access_Point() / DeviceTypeViewModel.Total()) * 100 }, DeviceTypeViewModel);
+        DeviceTypeViewModel.Access_ControllerPercentage = ko.computed(function () { return (this.Access_Controller() / DeviceTypeViewModel.Total()) * 100 }, DeviceTypeViewModel);
+        DeviceTypeViewModel.ComputerPercentage = ko.computed(function () { return (this.Computer() / DeviceTypeViewModel.Total()) * 100 }, DeviceTypeViewModel);
+        DeviceTypeViewModel.UnmanagedPercentage = ko.computed(function () { return (this.Unmanaged() / DeviceTypeViewModel.Total()) * 100 }, DeviceTypeViewModel);
+        DeviceTypeViewModel.LinuxPercentage = ko.computed(function () { return (this.Linux() / DeviceTypeViewModel.Total()) * 100 }, DeviceTypeViewModel);
+        DeviceTypeViewModel.RouterPercentage = ko.computed(function () { return (this.Router() / DeviceTypeViewModel.Total()) * 100 }, DeviceTypeViewModel);
+        ko.applyBindings(DeviceTypeViewModel, document.getElementById('DeviceResourceTbl'));
+
+        /*
         $.ajax({
-            url: "https://192.168.68.230/data/dashboard/topCPU",
-            success: function (TopCPU) {
-                ko.applyBindings(new TopNCPUUsageModel(TopCPU), document.getElementById('DeviceResourceStatisticsTbl'));
+            url: "http://192.168.1.33:8081/data/dashboard/device",
+            success: function (Device) {
+                ko.applyBindings(new DeviceResourceModel(Device), document.getElementById('DeviceResourceTbl'));
             }
         });
+        */
     });
 
-    function SetCPUTableItem(ip, name, value) {
+    function DeviceResourceTableItem(ip, name, value) {
         this.ip = ko.observable(ip);
         if (name == undefined || name == "") this.name = ko.observable(ip);
         else this.name = ko.observable(name);
         this.percentageValue = ko.observable(value.toFixed(1));
     }
-
-    function TopNCPUUsageModel(TopCPU) {
+    
+    function DeviceResourceModel(Device) {
         this.TopNCPU = ko.observableArray([]);
-        if (TopCPU)
-            for (var i = 0; i < TopCPU.length; i++)
-                this.TopNCPU.push(new SetCPUTableItem(TopCPU[i].ip, TopCPU[i].name, TopCPU[i].value));
+        this.LastUpdate = ko.observable(moment().format('DD/MM/YYYY HH:mm'));
+        if (Device)
+            for (var i = 0; i < Device.length; i++)
+                this.TopNCPU.push(new DeviceResourceTableItem(Device[i].ip, Device[i].name, Device[i].value));
     }
-</script>*@
+</script>
