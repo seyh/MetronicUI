@@ -18,81 +18,48 @@
 <script type="text/javascript">
     var ChartsFlotcharts = function () {
         return {
-
-            initCharts: function () {
-
-                if (!jQuery.plot) {
-                    return;
-                }
-
-                var data = [];
-                var totalPoints = 250;
-
-                // random data generator for plot charts
-
-                function getRandomData() {
-                    if (data.length > 0) data = data.slice(1);
-                    // do a random walk
-                    while (data.length < totalPoints) {
-                        var prev = data.length > 0 ? data[data.length - 1] : 50;
-                        var y = prev + Math.random() * 10 - 5;
-                        if (y < 0) y = 0;
-                        if (y > 100) y = 100;
-                        data.push(y);
-                    }
-                    // zip the generated y values with the x values
-                    var res = [];
-                    for (var i = 0; i < data.length; ++i) {
-                        res.push([i, data[i]]);
-                    }
-
-                    return res;
-                }
-
-                function chart2() {
-                    if ($('#chart_2').size() != 1) {
-                        return;
-                    }
+            initCharts: function (hours) {
+                if (!jQuery.plot) return;
+                function chart2()
+                {
+                    if ($('#chart_2').size() != 1) return;
 
                     function randValue() {
                         return (Math.floor(Math.random() * (1 + 40 - 20))) + 20;
                     }
-                    var visitors = [
+
+                    var count = [
+                        [0, randValue() - 5],
                         [1, randValue() - 5],
                         [2, randValue() - 5],
-                        [3, randValue() - 5],
-                        [4, 6 + randValue()],
-                        [5, 5 + randValue()],
-                        [6, 20 + randValue()],
-                        [7, 25 + randValue()],
-                        [8, 36 + randValue()],
-                        [9, 26 + randValue()],
-                        [10, 38 + randValue()],
-                        [11, 39 + randValue()],
-                        [12, 50 + randValue()],
-                        [13, 51 + randValue()],
-                        [14, 12 + randValue()],
-                        [15, 13 + randValue()],
-                        [16, 14 + randValue()],
+                        [3, 6 + randValue()],
+                        [4, 5 + randValue()],
+                        [5, 20 + randValue()],
+                        [6, 25 + randValue()],
+                        [7, 36 + randValue()],
+                        [8, 26 + randValue()],
+                        [9, 38 + randValue()],
+                        [10, 39 + randValue()],
+                        [11, 50 + randValue()],
+                        [12, 51 + randValue()],
+                        [13, 12 + randValue()],
+                        [14, 13 + randValue()],
+                        [15, 14 + randValue()],
+                        [16, 15 + randValue()],
                         [17, 15 + randValue()],
-                        [18, 15 + randValue()],
-                        [19, 16 + randValue()],
-                        [20, 17 + randValue()],
-                        [21, 18 + randValue()],
-                        [22, 19 + randValue()],
-                        [23, 20 + randValue()],
-                        [24, 21 + randValue()]
+                        [18, 16 + randValue()],
+                        [19, 17 + randValue()],
+                        [20, 18 + randValue()],
+                        [21, 19 + randValue()],
+                        [22, 20 + randValue()],
+                        [23, 21 + randValue()]
                     ];
-
-                    console.log(visitors);
 
                     var plot = $.plot($("#chart_2"), [
                         {
-                            data: visitors,
+                            data: hours,
                             label: "Connected User",
-                            lines: {
-                                lineWidth: 1,
-                            },
+                            lines: { lineWidth: 1 },
                             shadowSize: 0
                         }], {
                         series: {
@@ -100,13 +67,7 @@
                                 show: true,
                                 lineWidth: 2,
                                 fill: true,
-                                fillColor: {
-                                    colors: [{
-                                        opacity: 0.05
-                                    }, {
-                                        opacity: 0.01
-                                    }]
-                                }
+                                fillColor: { colors: [{ opacity: 0.05 }, { opacity: 0.01 }] }
                             },
                             points: {
                                 show: true,
@@ -173,51 +134,60 @@
                     });
                 }
                 chart2();
-            },
-            initAxisLabelsPlugin: function () {
-                var d1 = [];
-
-                for (var i = 0; i < Math.PI * 2; i += 0.25)
-                    d1.push([i, Math.sin(i)]);
-
-                var d2 = [];
-                for (var i = 0; i < Math.PI * 2; i += 0.25)
-                    d2.push([i, Math.cos(i)]);
-
-                var d3 = [];
-                for (var i = 0; i < Math.PI * 2; i += 0.1)
-                    d3.push([i, Math.tan(i)]);
-
-                var options = {
-                    axisLabels: {
-                        show: true
-                    },
-                    xaxes: [{
-                        axisLabel: 'hor label',
-                        tickColor: "#eee",
-                    }],
-                    yaxes: [{
-                        position: 'left',
-                        axisLabel: 'ver label',
-                        tickColor: "#eee",
-                    }, {
-                        position: 'right',
-                        axisLabel: 'bleem'
-                    }],
-
-                    grid: {
-                        borderColor: "#eee",
-                        borderWidth: 1
-                    }
-                };
             }
         }
     }();
 
     jQuery(document).ready(function () {
-        ChartsFlotcharts.initCharts();
-        //ChartsFlotcharts.initPieCharts();
-        //ChartsFlotcharts.initBarCharts();
-        ChartsFlotcharts.initAxisLabelsPlugin();
+        var date;
+        var hours = [];
+
+        for (i = 0; i < 24; i++) hours.push([i,0]);
+
+        var countTicks = [
+	        { "count": 2585, "time": 1502961311623 }, // 09:15
+	        { "count": 1692, "time": 1502964911623 }, // 10:15
+	        { "count": 1232, "time": 1502968511623 }, // 11:15
+	        { "count": 1504, "time": 1502972111623 }, // 12:15
+	        { "count": 1393, "time": 1502975711623 }, // 13:15
+	        { "count": 1023, "time": 1502979311623 }, // 14.15
+	        { "count": 2099, "time": 1502982911623 }, // 15.15
+	        { "count": 1989, "time": 1502986511623 }, // 16.15
+	        { "count": 1950, "time": 1502990111623 }, // 17.15
+	        { "count": 1903, "time": 1502993711623 }, // 18.15
+	        { "count": 1514, "time": 1502997311623 }, // 19.15
+	        { "count": 1814, "time": 1503000911623 }, // 20.15
+	        { "count": 1547, "time": 1503004511623 }, // 21.15
+	        { "count": 2005, "time": 1503008111623 }, // 22:15
+	        { "count": 1772, "time": 1503011711623 }, // 23:15
+	        { "count": 1362, "time": 1503015311623 }, // 00:15
+	        { "count": 1710, "time": 1503018911623 }, // 01:15
+	        { "count": 1476, "time": 1503022511623 }, // 02:15
+	        { "count": 1252, "time": 1503026111623 }, // 03:15
+	        { "count": 2016, "time": 1503029711623 }, // 04:15
+	        { "count": 453, "time": 1503033311623 },  // 05:15
+	        { "count": 2491, "time": 1503036911623 }, // 06:15
+	        { "count": 1519, "time": 1503040511623 }  // 07:15
+        ];
+
+        var WLANUserConnectedCountViewModel = {};
+        WLANUserConnectedCountViewModel.UserCount = ko.mapping.fromJS(countTicks);
+
+        for (i = 0; i < countTicks.length; i++)
+        {
+            date = new Date(WLANUserConnectedCountViewModel.UserCount()[i].time());
+            if (date.getHours() - 3 >= 0)
+            {
+                hours[date.getHours() - 3] = [date.getHours() - 3, WLANUserConnectedCountViewModel.UserCount()[i].count()];
+            }
+            else
+            {
+                if (date.getHours() - 3 == -1) hours[21] = [21, WLANUserConnectedCountViewModel.UserCount()[i].count()];
+                else if (date.getHours() - 3 == -2) hours[22] = [22, WLANUserConnectedCountViewModel.UserCount()[i].count()];
+                else hours[23] = [23, WLANUserConnectedCountViewModel.UserCount()[i].count()];
+            }
+        }
+
+        ChartsFlotcharts.initCharts(hours);
     });
 </script>
