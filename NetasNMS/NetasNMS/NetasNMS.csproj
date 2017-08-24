@@ -6219,7 +6219,6 @@
     <Content Include="Views\Configration\FileManagement.cshtml" />
     <Content Include="Views\Configration\Template.cshtml" />
     <Content Include="Views\Reporting\NetworkReport.cshtml" />
-    <Content Include="Views\Reporting\AlarmReport.cshtml" />
     <Content Include="Views\Reporting\InventoryReport.cshtml" />
     <Content Include="Views\Reporting\WLANReport.cshtml" />
     <Content Include="Views\ScheduleTasks\DownloadFile.cshtml" />
@@ -6235,6 +6234,9 @@
     <Content Include="Views\Shared\_MainDashboardFirstRowStatistics.cshtml" />
     <Content Include="Views\Shared\_BreadcumbAction.cshtml" />
     <Content Include="Views\Shared\_ClientRadioTypes.cshtml" />
+    <Content Include="Views\Reporting\EventAlarmsReport.cshtml" />
+    <Content Include="Views\Reporting\AcknowledgeEventAlarmsReport.cshtml" />
+    <Content Include="Views\Reporting\SyslogEventAlarmsReport.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
