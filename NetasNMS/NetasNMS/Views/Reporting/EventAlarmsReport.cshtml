@@ -71,37 +71,46 @@
                                 </div>
                                 <span class="help-block"> Select end date </span>
                             </div>
+                            <div class="col-md-3">
+                                <div class="input-group date form_date col-md-5" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                                    <input class="form-control" size="16" type="text" value="" readonly>
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                </div>
+                            </div>
                             <div class="col-md-3"></div>
-                            <div class="col-md-3"> </div>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-            <!-- END CONTENT BODY -->
+    <!-- END CONTENT BODY -->
 </div>
-<!-- END CONTENT -->
+
 <script src="../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<!-- BEGIN PAGE LEVEL PLUGINS -->
-<script src="../assets/global/plugins/moment.min.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/clockface/js/clockface.js" type="text/javascript"></script>
-<!-- END PAGE LEVEL PLUGINS -->
-<!-- BEGIN THEME GLOBAL SCRIPTS -->
-<script src="../assets/global/scripts/app.min.js" type="text/javascript"></script>
-<!-- END THEME GLOBAL SCRIPTS -->
-<!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="../assets/pages/scripts/components-date-time-pickers.min.js" type="text/javascript"></script>
-<!-- END PAGE LEVEL SCRIPTS -->
 <script>
-                $(document).ready(function () {
-                    $('#clickmewow').click(function () {
-                        $('#radio1003').attr('checked', 'checked');
-                    });
-                })
+    $(document).ready(function () {
+        $('.form_date').datetimepicker({
+            language: 'tr',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0
+        });
+
+        $(".form_meridian_datetime").datetimepicker({
+            isRTL: App.isRTL(),
+            format: "dd MM yyyy - HH:ii P",
+            showMeridian: true,
+            autoclose: true,
+            fontAwesome: true,
+            pickerPosition: (App.isRTL() ? "bottom-right" : "bottom-left"),
+            todayBtn: true
+        });
+
+    });
 </script>
