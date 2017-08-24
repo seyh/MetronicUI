@@ -98,12 +98,20 @@
 
     $(document).ready(function () {
 
-        //AC Part
+        ///// -------- AC Part -------- /////
         var AcStatusViewModel = {
             Online: ko.observable(),
             Offline: ko.observable()
         }
-        ko.mapping.fromJS({ 'Online': 1100, 'Offline': 100 }, {}, AcStatusViewModel);
+
+        $.ajax({
+            url: "https://192.168.68.230/data/dashboard/acStatus",
+            success: function (alarmEvent) {
+                AcStatusViewModel = ko.mapping.fromJS(alarmEvent, {}, AcStatusViewModel);
+            }
+        });
+
+        //ko.mapping.fromJS({ 'Online': 1100, 'Offline': 100 }, {}, AcStatusViewModel);
         if (!AcStatusViewModel.Online()) AcStatusViewModel.Online(0);
         if (!AcStatusViewModel.Offline()) AcStatusViewModel.Offline(0);
 
@@ -111,13 +119,24 @@
         AcStatusViewModel.OnlinePercentage = ko.computed(function () { return (this.Online() / (this.Online() + this.Offline())) * 100 }, AcStatusViewModel);
         AcStatusViewModel.OfflinePercentage = ko.computed(function () { return (this.Offline() / (this.Online() + this.Offline())) * 100 }, AcStatusViewModel);
         ko.applyBindings(AcStatusViewModel, document.getElementById('acstatus'));
+        ///// -------- AC Part -------- /////
 
-        //AP Part
+
+
+        ///// -------- AP Part -------- /////
         var ApStatusViewModel = {
             Managed: ko.observable(),
             Connection_Failed: ko.observable()
         }
-        ko.mapping.fromJS({ 'Managed': 42000, 'Connection_Failed': 100 }, {}, ApStatusViewModel);
+
+        $.ajax({
+            url: "https://192.168.68.230/data/dashboard/apStatus",
+            success: function (alarmEvent) {
+                ApStatusViewModel = ko.mapping.fromJS(alarmEvent, {}, ApStatusViewModel);
+            }
+        });
+
+        //ko.mapping.fromJS({ 'Managed': 42000, 'Connection_Failed': 100 }, {}, ApStatusViewModel);
         if (!ApStatusViewModel.Managed()) ApStatusViewModel.Managed(0);
         if (!ApStatusViewModel.Connection_Failed()) ApStatusViewModel.Connection_Failed(0);
 
@@ -125,6 +144,8 @@
         ApStatusViewModel.ManagedPercentage = ko.computed(function () { return (this.Managed() / (this.Managed() + this.Connection_Failed())) * 100 }, ApStatusViewModel);
         ApStatusViewModel.ConnectionFailedPercentage = ko.computed(function () { return (this.Connection_Failed() / (this.Managed() + this.Connection_Failed())) * 100 }, ApStatusViewModel);
         ko.applyBindings(ApStatusViewModel, document.getElementById('apstatus'));
+        ///// -------- AC Part -------- /////
+
 
         PieCharts.initEasyPieCharts();
     });

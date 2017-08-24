@@ -262,34 +262,51 @@
 <script src="../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(document).ready(function () {
-
-        //AC Part
-        var fAcStatusViewModel = {
+        ///// -------- AC Part -------- /////
+        var FirstRowAcStatusViewModel = {
             Online: ko.observable(),
             Offline: ko.observable()
         }
-        ko.mapping.fromJS({ 'Online': 1100, 'Offline': 100 }, {}, fAcStatusViewModel);
-        if (!fAcStatusViewModel.Online()) fAcStatusViewModel.Online(0);
-        if (!fAcStatusViewModel.Offline()) fAcStatusViewModel.Offline(0);
 
-        fAcStatusViewModel.Total = ko.computed(function () { return this.Online() + this.Offline() }, fAcStatusViewModel);
-        fAcStatusViewModel.OnlinePercentage = ko.computed(function () { return (this.Online() / (this.Online() + this.Offline())) * 100 }, fAcStatusViewModel);
-        fAcStatusViewModel.OfflinePercentage = ko.computed(function () { return (this.Offline() / (this.Online() + this.Offline())) * 100 }, fAcStatusViewModel);
-        ko.applyBindings(fAcStatusViewModel, document.getElementById('acStatusFirstRow'));
+        $.ajax({
+            url: "https://192.168.68.230/data/dashboard/acStatus",
+            success: function (alarmEvent) {
+                FirstRowAcStatusViewModel = ko.mapping.fromJS(alarmEvent, {}, FirstRowAcStatusViewModel);
+            }
+        });
 
-        //AP Part
-        var fApStatusViewModel = {
+        if (!FirstRowAcStatusViewModel.Online()) FirstRowAcStatusViewModel.Online(0);
+        if (!FirstRowAcStatusViewModel.Offline()) FirstRowAcStatusViewModel.Offline(0);
+
+        FirstRowAcStatusViewModel.Total = ko.computed(function () { return this.Online() + this.Offline() }, FirstRowAcStatusViewModel);
+        FirstRowAcStatusViewModel.OnlinePercentage = ko.computed(function () { return (this.Online() / (this.Online() + this.Offline())) * 100 }, FirstRowAcStatusViewModel);
+        FirstRowAcStatusViewModel.OfflinePercentage = ko.computed(function () { return (this.Offline() / (this.Online() + this.Offline())) * 100 }, FirstRowAcStatusViewModel);
+        ko.applyBindings(FirstRowAcStatusViewModel, document.getElementById('acStatusFirstRow'));
+        ///// -------- AC Part -------- /////
+
+
+
+        ///// -------- AP Part -------- /////
+        var FirstRowApStatusViewModel = {
             Managed: ko.observable(),
             Connection_Failed: ko.observable()
         }
-        ko.mapping.fromJS({ 'Managed': 42000, 'Connection_Failed': 100 }, {}, fApStatusViewModel);
-        if (!fApStatusViewModel.Managed()) fApStatusViewModel.Managed(0);
-        if (!fApStatusViewModel.Connection_Failed()) fApStatusViewModel.Connection_Failed(0);
 
-        fApStatusViewModel.Total = ko.computed(function () { return this.Managed() + this.Connection_Failed() }, fApStatusViewModel);
-        fApStatusViewModel.ManagedPercentage = ko.computed(function () { return (this.Managed() / (this.Managed() + this.Connection_Failed())) * 100 }, fApStatusViewModel);
-        fApStatusViewModel.ConnectionFailedPercentage = ko.computed(function () { return (this.Connection_Failed() / (this.Managed() + this.Connection_Failed())) * 100 }, fApStatusViewModel);
-        ko.applyBindings(fApStatusViewModel, document.getElementById('apStatusFirstRow'));
-       
+        $.ajax({
+            url: "https://192.168.68.230/data/dashboard/apStatus",
+            success: function (alarmEvent) {
+                FirstRowApStatusViewModel = ko.mapping.fromJS(alarmEvent, {}, FirstRowApStatusViewModel);
+            }
+        });
+
+        if (!FirstRowApStatusViewModel.Managed()) FirstRowApStatusViewModel.Managed(0);
+        if (!FirstRowApStatusViewModel.Connection_Failed()) FirstRowApStatusViewModel.Connection_Failed(0);
+
+        FirstRowApStatusViewModel.Total = ko.computed(function () { return this.Managed() + this.Connection_Failed() }, FirstRowApStatusViewModel);
+        FirstRowApStatusViewModel.ManagedPercentage = ko.computed(function () { return (this.Managed() / (this.Managed() + this.Connection_Failed())) * 100 }, FirstRowApStatusViewModel);
+        FirstRowApStatusViewModel.ConnectionFailedPercentage = ko.computed(function () { return (this.Connection_Failed() / (this.Managed() + this.Connection_Failed())) * 100 }, FirstRowApStatusViewModel);
+        ko.applyBindings(FirstRowApStatusViewModel, document.getElementById('apStatusFirstRow'));
+        ///// -------- AC Part -------- /////
     });
+
 </script>
