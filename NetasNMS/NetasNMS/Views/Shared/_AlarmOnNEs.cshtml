@@ -48,33 +48,37 @@
 </div>
 <script>
     $(document).ready(function () {
-        var data = [{
-            'source':'192.168.1.1',
-            'deviceName':'Birinci Cihaz',
-            'emergency':0,
-            'critical':1,
-            'alert':0,
-            'error':1,
-            'warning':0
-        },{
-            'source':'192.168.1.2',
-            'deviceName':'İkinci Cihaz',
-            'emergency':0,
-            'critical':1,
-            'alert':0,
-            'error':1,
-            'warning':0
-        }]
 
-        /*
-        var AlarmCountViewModel = {};
-        viewModel.users = ko.mapping.fromJS(data);
-        ko.applyBindings(viewModel);
-        */
+        var apiAlarms = [{
+            'source': '192.168.1.1',
+            'deviceName': 'Birinci Cihaz',
+            'emergency': 0,
+            'critical': 1,
+            'alert': 0,
+            'error': 1,
+            'warning': 0
+        }, {
+            'source': '192.168.1.2',
+            'deviceName': 'İkinci Cihaz',
+            'emergency': 0,
+            'critical': 1,
+            'alert': 0,
+            'error': 1,
+            'warning': 0
+        }];
 
         var AlarmCountViewModel = {};
-        AlarmCountViewModel.Alarms = ko.mapping.fromJS(data);
+
+        $.ajax({
+            url: "http://192.168.1.33:8081/data/dashboard/device",
+            success: function (alarms) {
+                apiAlarms = alarms;
+            }
+        });
+
+        AlarmCountViewModel.Alarms = ko.mapping.fromJS(apiAlarms);
         AlarmCountViewModel.LastUpdate = ko.observable(moment().format('DD/MM/YYYY HH:mm'));
         ko.applyBindings(AlarmCountViewModel, document.getElementById('AlarmOnTop'));
+
     });
 </script>

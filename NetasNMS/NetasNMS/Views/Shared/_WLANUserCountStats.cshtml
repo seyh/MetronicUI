@@ -20,40 +20,10 @@
         return {
             initCharts: function (hours) {
                 if (!jQuery.plot) return;
+
                 function chart2()
                 {
                     if ($('#chart_2').size() != 1) return;
-
-                    function randValue() {
-                        return (Math.floor(Math.random() * (1 + 40 - 20))) + 20;
-                    }
-
-                    var count = [
-                        [0, randValue() - 5],
-                        [1, randValue() - 5],
-                        [2, randValue() - 5],
-                        [3, 6 + randValue()],
-                        [4, 5 + randValue()],
-                        [5, 20 + randValue()],
-                        [6, 25 + randValue()],
-                        [7, 36 + randValue()],
-                        [8, 26 + randValue()],
-                        [9, 38 + randValue()],
-                        [10, 39 + randValue()],
-                        [11, 50 + randValue()],
-                        [12, 51 + randValue()],
-                        [13, 12 + randValue()],
-                        [14, 13 + randValue()],
-                        [15, 14 + randValue()],
-                        [16, 15 + randValue()],
-                        [17, 15 + randValue()],
-                        [18, 16 + randValue()],
-                        [19, 17 + randValue()],
-                        [20, 18 + randValue()],
-                        [21, 19 + randValue()],
-                        [22, 20 + randValue()],
-                        [23, 21 + randValue()]
-                    ];
 
                     var plot = $.plot($("#chart_2"), [
                         {
@@ -133,12 +103,13 @@
                         }
                     });
                 }
+
                 chart2();
             }
         }
     }();
 
-    jQuery(document).ready(function () {
+    $(document).ready(function () {
         var date;
         var hours = [];
 
@@ -171,6 +142,14 @@
         ];
 
         var WLANUserConnectedCountViewModel = {};
+
+        $.ajax({
+            url: "http://192.168.1.33:8081/data/dashboard/device",
+            success: function (response) {
+                countTicks = response;
+            }
+        });
+
         WLANUserConnectedCountViewModel.UserCount = ko.mapping.fromJS(countTicks);
 
         for (i = 0; i < countTicks.length; i++)

@@ -94,8 +94,8 @@
         }
     }();
 
-    $(document).ready(function () {
-
+    $(document).ready(function ()
+    {
         var AlarmCountViewModel = {
             Emergency: ko.observable(),
             Critical: ko.observable(),
@@ -106,7 +106,16 @@
             Information: ko.observable()
         }
 
-        var AlarmCountViewModel = ko.mapping.fromJS(
+        $.ajax({
+            url: "https://192.168.68.230/data/dashboard/event",
+            success: function (alarmEvent) {
+                AlarmCountViewModel = ko.mapping.fromJS(alarmEvent, {}, AlarmCountViewModel);
+                ko.applyBindings(AlarmCountViewModel, document.getElementById('currentAlarm'));
+            }
+        });
+
+        /*
+        AlarmCountViewModel = ko.mapping.fromJS(
         {
             'Emergency': 1,
             'Critical': 15,
@@ -117,6 +126,7 @@
             'Information': 50
         }, {}, AlarmCountViewModel);
         ko.applyBindings(AlarmCountViewModel, document.getElementById('currentAlarm'));
+        */
 
         BarChart.initAmChart3(AlarmCountViewModel); // init metronic core componets
     });

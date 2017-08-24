@@ -111,6 +111,7 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+        /*
         var device = {
             'Switch': 1,
             'Access_Point': 2,
@@ -120,6 +121,7 @@
             'Linux': 1,
             'Router': 1
         }
+        */
 
         var DeviceTypeViewModel = {
             Switch: ko.observable(),
@@ -131,7 +133,15 @@
             Router: ko.observable()
         }
 
-        ko.mapping.fromJS(device, {}, DeviceTypeViewModel);
+        $.ajax({
+            url: "http://192.168.1.33:8081/data/dashboard/device",
+            success: function (deviceDetail) {
+                DeviceTypeViewModel = ko.mapping.fromJS(deviceDetail, {}, DeviceTypeViewModel);
+            }
+        });
+
+        //ko.mapping.fromJS(device, {}, DeviceTypeViewModel);
+        DeviceTypeViewModel.LastUpdate = ko.observable(moment().format('DD/MM/YYYY HH:mm'));
         DeviceTypeViewModel.Total = ko.computed(function () { return this.Switch() + this.Access_Point() + this.Access_Controller() + this.Computer() + this.Unmanaged() + this.Linux() + this.Router() }, DeviceTypeViewModel);
         DeviceTypeViewModel.SwitchPercentage = ko.computed(function () { return (this.Switch() / DeviceTypeViewModel.Total()) * 100 }, DeviceTypeViewModel);
         DeviceTypeViewModel.Access_PointPercentage = ko.computed(function () { return (this.Access_Point() / DeviceTypeViewModel.Total()) * 100 }, DeviceTypeViewModel);
@@ -141,29 +151,5 @@
         DeviceTypeViewModel.LinuxPercentage = ko.computed(function () { return (this.Linux() / DeviceTypeViewModel.Total()) * 100 }, DeviceTypeViewModel);
         DeviceTypeViewModel.RouterPercentage = ko.computed(function () { return (this.Router() / DeviceTypeViewModel.Total()) * 100 }, DeviceTypeViewModel);
         ko.applyBindings(DeviceTypeViewModel, document.getElementById('DeviceResourceTbl'));
-
-        /*
-        $.ajax({
-            url: "http://192.168.1.33:8081/data/dashboard/device",
-            success: function (Device) {
-                ko.applyBindings(new DeviceResourceModel(Device), document.getElementById('DeviceResourceTbl'));
-            }
-        });
-        */
     });
-
-    function DeviceResourceTableItem(ip, name, value) {
-        this.ip = ko.observable(ip);
-        if (name == undefined || name == "") this.name = ko.observable(ip);
-        else this.name = ko.observable(name);
-        this.percentageValue = ko.observable(value.toFixed(1));
-    }
-    
-    function DeviceResourceModel(Device) {
-        this.TopNCPU = ko.observableArray([]);
-        this.LastUpdate = ko.observable(moment().format('DD/MM/YYYY HH:mm'));
-        if (Device)
-            for (var i = 0; i < Device.length; i++)
-                this.TopNCPU.push(new DeviceResourceTableItem(Device[i].ip, Device[i].name, Device[i].value));
-    }
 </script>
