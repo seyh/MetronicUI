@@ -19,6 +19,21 @@ namespace NetasNMS.Controllers
             return View();
         }
 
+        public ActionResult EventAlarmsReport()
+        {
+            return View();
+        }
+
+        public ActionResult AcknowledgeEventAlarmsReport()
+        {
+            return View();
+        }
+
+        public ActionResult SyslogEventAlarmsReport()
+        {
+            return View();
+        }
+
         public ActionResult InventoryReport()
         {
             return View();
