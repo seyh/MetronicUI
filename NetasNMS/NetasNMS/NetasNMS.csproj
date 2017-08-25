@@ -152,6 +152,7 @@
     <Content Include="assets\apps\scripts\todo.js" />
     <Content Include="assets\apps\scripts\todo.min.js" />
     <Content Include="assets\global\bootstrap-datetimepicker.js" />
+    <Content Include="assets\global\bootstrap-datetimepicker.min.css" />
     <Content Include="assets\global\bootstrap-datetimepicker.tr.js" />
     <Content Include="assets\global\css\components-md.css" />
     <Content Include="assets\global\css\components-md.min.css" />
