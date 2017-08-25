@@ -33,15 +33,15 @@
         </div>
         <!-- END PAGE HEADER-->
         <div class="m-heading-1 border-green m-bordered">
-            <h3>Report Action</h3>
+            <h3 style="margin-top:0px; padding-left:20px; width:100%; border-bottom:solid 1px #eef1f5; padding-bottom:10px;">Report Action</h3>
             <div class="portlet-body form">
                 <!-- BEGIN FORM-->
                 <form action="#" class="form-horizontal">
                     <div class="form-body">
                         <div class="form-group">
                             <div class="col-md-3">
-                                <div class="input-group date form_meridian_datetime form_datetime bs-datetime" data-date="2012-12-21T15:25:00Z">
-                                    <input type="text" size="16" class="form-control">
+                                <div class="input-group date form_date form_datetime bs-datetime" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                                    <input class="form-control" size="16" type="text" value="Select start date" readonly>
                                     <span class="input-group-addon">
                                         <button class="btn default date-reset" type="button">
                                             <i class="fa fa-times"></i>
@@ -53,27 +53,10 @@
                                         </button>
                                     </span>
                                 </div>
-                                <span class="help-block"> Select start date </span>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="input-group date form_meridian_datetime form_datetime bs-datetime" data-date="2012-12-21T15:25:00Z">
-                                    <input type="text" size="16" class="form-control">
-                                    <span class="input-group-addon">
-                                        <button class="btn default date-reset" type="button">
-                                            <i class="fa fa-times"></i>
-                                        </button>
-                                    </span>
-                                    <span class="input-group-addon">
-                                        <button class="btn default date-set" type="button">
-                                            <i class="fa fa-calendar"></i>
-                                        </button>
-                                    </span>
-                                </div>
-                                <span class="help-block"> Select end date </span>
                             </div>
                             <div class="col-md-3">
                                 <div class="input-group date form_date form_datetime bs-datetime" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                                    <input class="form-control" size="16" type="text" value="" readonly>
+                                    <input class="form-control" size="16" type="text" value="Select end date" readonly>
                                     <span class="input-group-addon">
                                         <button class="btn default date-reset" type="button">
                                             <i class="fa fa-times"></i>
@@ -85,6 +68,9 @@
                                         </button>
                                     </span>
                                 </div>
+                            </div>
+                            <div class="col-md-3">
+
                             </div>
                             <div class="col-md-3"></div>
                         </div>
@@ -105,7 +91,9 @@
             weekStart: 1,
             todayBtn: true,
             autoclose: true,
-            todayHighlight: true
+            todayHighlight: true,
+            isRTL: App.isRTL(),
+            pickerPosition: (App.isRTL() ? "bottom-right" : "bottom-left")
         });
 
         $(".form_meridian_datetime").datetimepicker({
