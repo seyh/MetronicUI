@@ -6240,6 +6240,7 @@
     <Content Include="Views\Reporting\EventAlarmsReport.cshtml" />
     <Content Include="Views\Reporting\AcknowledgeEventAlarmsReport.cshtml" />
     <Content Include="Views\Reporting\SyslogEventAlarmsReport.cshtml" />
+    <None Include="Properties\PublishProfiles\NMS.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
