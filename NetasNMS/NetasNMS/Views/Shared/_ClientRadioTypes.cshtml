@@ -112,7 +112,7 @@
         }
 
         $.ajax({
-            url: "http://192.168.1.33:8081/data/dashboard/clientRadioType",
+            url: "http://217.78.97.240:8081/data/dashboard/clientRadioType",
             success: function (status) {
                 ko.mapping.fromJS(status, {}, statusRadioTypesViewModel);
                 if (!statusRadioTypesViewModel.GHz24()) statusRadioTypesViewModel.GHz24(0);

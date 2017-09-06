@@ -173,7 +173,7 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $.ajax({
-            url: "https://192.168.68.230/data/dashboard/topCPU",
+            url: "http://217.78.97.240:8081/data/dashboard/topCPU",
             success: function (TopCPU) {
                 ko.applyBindings(new TopNCPUUsageModel(TopCPU), document.getElementById('CPUUsageTbl'));
             }

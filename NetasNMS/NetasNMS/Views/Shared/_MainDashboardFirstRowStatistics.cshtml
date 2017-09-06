@@ -262,14 +262,16 @@
 <script src="../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(document).ready(function () {
+
         ///// -------- AC Part -------- /////
+
         var FirstRowAcStatusViewModel = {
             Online: ko.observable(),
             Offline: ko.observable()
         }
 
         $.ajax({
-            url: "https://192.168.68.230/data/dashboard/acStatus",
+            url: "http://217.78.97.240:8081/data/dashboard/acStatus",
             success: function (alarmEvent) {
                 FirstRowAcStatusViewModel = ko.mapping.fromJS(alarmEvent, {}, FirstRowAcStatusViewModel);
             }
@@ -282,18 +284,20 @@
         FirstRowAcStatusViewModel.OnlinePercentage = ko.computed(function () { return (this.Online() / (this.Online() + this.Offline())) * 100 }, FirstRowAcStatusViewModel);
         FirstRowAcStatusViewModel.OfflinePercentage = ko.computed(function () { return (this.Offline() / (this.Online() + this.Offline())) * 100 }, FirstRowAcStatusViewModel);
         ko.applyBindings(FirstRowAcStatusViewModel, document.getElementById('acStatusFirstRow'));
+
         ///// -------- AC Part -------- /////
 
 
 
         ///// -------- AP Part -------- /////
+
         var FirstRowApStatusViewModel = {
             Managed: ko.observable(),
             Connection_Failed: ko.observable()
         }
 
         $.ajax({
-            url: "https://192.168.68.230/data/dashboard/apStatus",
+            url: "http://217.78.97.240:8081/data/dashboard/apStatus",
             success: function (alarmEvent) {
                 FirstRowApStatusViewModel = ko.mapping.fromJS(alarmEvent, {}, FirstRowApStatusViewModel);
             }
@@ -306,6 +310,7 @@
         FirstRowApStatusViewModel.ManagedPercentage = ko.computed(function () { return (this.Managed() / (this.Managed() + this.Connection_Failed())) * 100 }, FirstRowApStatusViewModel);
         FirstRowApStatusViewModel.ConnectionFailedPercentage = ko.computed(function () { return (this.Connection_Failed() / (this.Managed() + this.Connection_Failed())) * 100 }, FirstRowApStatusViewModel);
         ko.applyBindings(FirstRowApStatusViewModel, document.getElementById('apStatusFirstRow'));
+
         ///// -------- AC Part -------- /////
     });
 

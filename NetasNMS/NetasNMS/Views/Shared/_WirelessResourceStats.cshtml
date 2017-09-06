@@ -105,7 +105,7 @@
         }
 
         $.ajax({
-            url: "https://192.168.68.230/data/dashboard/acStatus",
+            url: "http://217.78.97.240:8081/data/dashboard/acStatus",
             success: function (alarmEvent) {
                 AcStatusViewModel = ko.mapping.fromJS(alarmEvent, {}, AcStatusViewModel);
             }
@@ -130,7 +130,7 @@
         }
 
         $.ajax({
-            url: "https://192.168.68.230/data/dashboard/apStatus",
+            url: "http://217.78.97.240:8081/data/dashboard/apStatus",
             success: function (alarmEvent) {
                 ApStatusViewModel = ko.mapping.fromJS(alarmEvent, {}, ApStatusViewModel);
             }

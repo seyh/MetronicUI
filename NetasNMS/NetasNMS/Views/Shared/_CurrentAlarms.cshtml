@@ -107,7 +107,7 @@
         }
 
         $.ajax({
-            url: "https://192.168.68.230/data/dashboard/event",
+            url: "http://217.78.97.240:8081/data/dashboard/event",
             success: function (alarmEvent) {
                 AlarmCountViewModel = ko.mapping.fromJS(alarmEvent, {}, AlarmCountViewModel);
                 ko.applyBindings(AlarmCountViewModel, document.getElementById('currentAlarm'));

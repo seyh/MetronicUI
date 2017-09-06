@@ -4735,6 +4735,7 @@
     <Content Include="assets\layouts\layout2\img\loading.gif" />
     <Content Include="assets\layouts\layout2\img\logo-big-white.png" />
     <Content Include="assets\layouts\layout2\img\logo-big.png" />
+    <Content Include="assets\layouts\layout2\img\logo-default-menu.png" />
     <Content Include="assets\layouts\layout2\img\logo-default.png" />
     <Content Include="assets\layouts\layout2\img\logo.png" />
     <Content Include="assets\layouts\layout2\img\menu-toggler.png" />
