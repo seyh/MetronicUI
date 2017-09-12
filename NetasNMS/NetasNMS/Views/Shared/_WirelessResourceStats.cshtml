@@ -1,6 +1,6 @@
 ﻿<div class="col-lg-12 col-xs-12 col-sm-12">
     <div class="portlet light ">
-        <div class="portlet-body">
+        <div class="portlet-body" style="border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 5px;">
             <div class="row">
                 <div id="acstatus" class="col-lg-6 col-xs-12 col-sm-12">
                     <span class="caption-subject bold font-dark" style="font-size:14px; border-bottom:1px solid #eee; padding-bottom:10px; margin-bottom:15px; display:block">
@@ -31,7 +31,7 @@
                     <span class="caption-subject bold font-dark" style="border-bottom:1px solid #eee; padding-bottom:10px; margin-bottom:15px; display:block">
                         <i class="fa fa-signal font-dark"></i>
                         ACCESS POINT STATISTICS
-                        <span class="thin" style="font-size:14px; color:#aaa; float:right">Total Count : <span class="bold" style="color:red" data-bind="text: Total()"></span></span>
+                        <span class="thin" style="font-size:14px; color:#aaa; float:right">Total Count : <span class="bold" style="color:red" data-bind="text: Total"></span></span>
                     </span>
                     <div style="height:150px;">
                         <div class="col-md-5">
@@ -60,93 +60,88 @@
 <script type="text/javascript">
     var PieCharts = function () {
         return {
-            initEasyPieCharts: function () {
-                if (!jQuery().easyPieChart) {
-                    return;
+            initEasyPieCharts: function (status) {
+                if (!jQuery().easyPieChart) return;
+
+                if (status.Online != undefined && status.Offline != undefined)
+                {
+                    $('.easy-pie-chart .number.transactions.aconline').easyPieChart({
+                        animate:3000,
+                        size: 120,
+                        lineWidth: 8,
+                        barColor: App.getBrandColor('green')
+                    });
+
+                    $('.easy-pie-chart .number.transactions.acoffline').easyPieChart({
+                        animate: 3000,
+                        size: 120,
+                        lineWidth: 8,
+                        barColor: App.getBrandColor('red')
+                    });
                 }
 
-                $('.easy-pie-chart .number.transactions.aconline').easyPieChart({
-                    animate: 1000,
-                    size: 120,
-                    lineWidth: 8,
-                    barColor: App.getBrandColor('green')
-                });
+                if (status.Managed != undefined && status.Connection_Failed != undefined) {
+                    $('.easy-pie-chart .number.transactions.apmanaged').easyPieChart({
+                        animate: 3000,
+                        size: 120,
+                        lineWidth: 8,
+                        barColor: App.getBrandColor('blue')
+                    });
 
-                $('.easy-pie-chart .number.transactions.acoffline').easyPieChart({
-                    animate: 1000,
-                    size: 120,
-                    lineWidth: 8,
-                    barColor: App.getBrandColor('red')
-                });
-
-                $('.easy-pie-chart .number.transactions.apmanaged').easyPieChart({
-                    animate: 1000,
-                    size: 120,
-                    lineWidth: 8,
-                    barColor: App.getBrandColor('blue')
-                });
-
-                $('.easy-pie-chart .number.transactions.apconfail').easyPieChart({
-                    animate: 1000,
-                    size: 120,
-                    lineWidth: 8,
-                    barColor: App.getBrandColor('red')
-                });
+                    $('.easy-pie-chart .number.transactions.apconfail').easyPieChart({
+                        animate: 3000,
+                        size: 120,
+                        lineWidth: 8,
+                        barColor: App.getBrandColor('red')
+                    });
+                }
             }
         }
     }();
 
     $(document).ready(function () {
-
         ///// -------- AC Part -------- /////
-        var AcStatusViewModel = {
-            Online: ko.observable(),
-            Offline: ko.observable()
+        var AcStatusViewModel = function(modelView)
+        {
+            var self = this;
+            ko.mapping.fromJS(modelView, {}, this);
+            if (!self.Online()) self.Online(0);
+            if (!self.Offline()) self.Offline(0);
+            this.Total = ko.computed(function () { return self.Online() + self.Offline() });
+            this.OnlinePercentage = ko.computed(function () { return self.Online() / self.Total() * 100 });
+            this.OfflinePercentage = ko.computed(function () { return self.Offline() / self.Total() * 100 });
         }
 
         $.ajax({
             url: "http://217.78.97.240:8081/data/dashboard/acStatus",
-            success: function (alarmEvent) {
-                AcStatusViewModel = ko.mapping.fromJS(alarmEvent, {}, AcStatusViewModel);
+            success: function (deviceStatus) {
+                ko.applyBindings(new AcStatusViewModel(deviceStatus), document.getElementById('acstatus'));
+                PieCharts.initEasyPieCharts(new AcStatusViewModel(deviceStatus));
             }
         });
-
-        //ko.mapping.fromJS({ 'Online': 1100, 'Offline': 100 }, {}, AcStatusViewModel);
-        if (!AcStatusViewModel.Online()) AcStatusViewModel.Online(0);
-        if (!AcStatusViewModel.Offline()) AcStatusViewModel.Offline(0);
-
-        AcStatusViewModel.Total = ko.computed(function () { return this.Online() + this.Offline() }, AcStatusViewModel);
-        AcStatusViewModel.OnlinePercentage = ko.computed(function () { return (this.Online() / (this.Online() + this.Offline())) * 100 }, AcStatusViewModel);
-        AcStatusViewModel.OfflinePercentage = ko.computed(function () { return (this.Offline() / (this.Online() + this.Offline())) * 100 }, AcStatusViewModel);
-        ko.applyBindings(AcStatusViewModel, document.getElementById('acstatus'));
         ///// -------- AC Part -------- /////
 
 
 
         ///// -------- AP Part -------- /////
-        var ApStatusViewModel = {
-            Managed: ko.observable(),
-            Connection_Failed: ko.observable()
+        var ApStatusViewModel = function(modelView)
+        {
+            var self = this;
+            ko.mapping.fromJS(modelView, {}, this);
+            if (!self.Managed()) self.Managed(0);
+            if (!self.Connection_Failed()) self.Connection_Failed(0);
+            this.Total = ko.computed(function () { return self.Managed() + self.Connection_Failed() });
+            this.ManagedPercentage = ko.computed(function () { return self.Managed() / self.Total() * 100 });
+            this.ConnectionFailedPercentage = ko.computed(function () { return self.Connection_Failed() / self.Total() * 100 });
         }
 
         $.ajax({
             url: "http://217.78.97.240:8081/data/dashboard/apStatus",
-            success: function (alarmEvent) {
-                ApStatusViewModel = ko.mapping.fromJS(alarmEvent, {}, ApStatusViewModel);
+            success: function (deviceStatus) {
+                ko.applyBindings(new ApStatusViewModel(deviceStatus), document.getElementById('apstatus'));
+                PieCharts.initEasyPieCharts(new ApStatusViewModel(deviceStatus));
             }
         });
-
-        //ko.mapping.fromJS({ 'Managed': 42000, 'Connection_Failed': 100 }, {}, ApStatusViewModel);
-        if (!ApStatusViewModel.Managed()) ApStatusViewModel.Managed(0);
-        if (!ApStatusViewModel.Connection_Failed()) ApStatusViewModel.Connection_Failed(0);
-
-        ApStatusViewModel.Total = ko.computed(function () { return this.Managed() + this.Connection_Failed() }, ApStatusViewModel);
-        ApStatusViewModel.ManagedPercentage = ko.computed(function () { return (this.Managed() / (this.Managed() + this.Connection_Failed())) * 100 }, ApStatusViewModel);
-        ApStatusViewModel.ConnectionFailedPercentage = ko.computed(function () { return (this.Connection_Failed() / (this.Managed() + this.Connection_Failed())) * 100 }, ApStatusViewModel);
-        ko.applyBindings(ApStatusViewModel, document.getElementById('apstatus'));
         ///// -------- AC Part -------- /////
-
-
-        PieCharts.initEasyPieCharts();
     });
 </script>

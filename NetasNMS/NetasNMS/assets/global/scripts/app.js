@@ -482,16 +482,16 @@ var App = function() {
     };
 
     // Handles counterup plugin wrapper
-    var handleCounterup = function() {
-        if (!$().counterUp) {
-            return;
-        }
+    //var handleCounterup = function() {
+    //    if (!$().counterUp) {
+    //        return;
+    //    }
 
-        $("[data-counter='counterup']").counterUp({
-            delay: 10,
-            time: 1000
-        });
-    };
+    //    $("[data-counter='counterup']").counterUp({
+    //        delay: 10,
+    //        time: 1000
+    //    });
+    //};
 
     // Fix input placeholder issue for IE8 and IE9
     var handleFixInputPlaceholderForIE = function() {
@@ -599,7 +599,7 @@ var App = function() {
             handleModals(); // handle modals
             handleBootstrapConfirmation(); // handle bootstrap confirmations
             handleTextareaAutosize(); // handle autosize textareas
-            handleCounterup(); // handle counterup instances
+            //handleCounterup(); // handle counterup instances
 
             //Handle group element heights
             this.addResizeHandler(handleHeight); // handle auto calculating height on window resize

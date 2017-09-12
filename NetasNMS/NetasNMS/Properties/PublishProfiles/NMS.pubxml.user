@@ -61,7 +61,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/30/2017 21:37:53</publishTime>
     </File>
     <File Include="assets/global/bootstrap-datetimepicker.js">
-      <publishTime>08/24/2017 16:48:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="assets/global/bootstrap-datetimepicker.min.css">
       <publishTime>08/25/2017 09:33:22</publishTime>
@@ -15337,13 +15337,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/30/2017 21:32:13</publishTime>
     </File>
     <File Include="assets/layouts/layout3/scripts/demo.min.js">
-      <publishTime>03/30/2017 21:38:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="assets/layouts/layout3/scripts/layout.js">
       <publishTime>03/30/2017 21:32:13</publishTime>
     </File>
     <File Include="assets/layouts/layout3/scripts/layout.min.js">
-      <publishTime>03/30/2017 21:38:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="assets/layouts/layout4/css/custom.css">
       <publishTime>03/30/2017 21:29:28</publishTime>
@@ -15508,7 +15508,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/30/2017 21:29:28</publishTime>
     </File>
     <File Include="assets/layouts/layout5/css/layout.min.css">
-      <publishTime>03/30/2017 21:38:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="assets/layouts/layout5/img/avatar1.jpg">
       <publishTime>03/30/2017 21:29:28</publishTime>
@@ -15532,7 +15532,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/30/2017 21:29:28</publishTime>
     </File>
     <File Include="assets/layouts/layout6/css/custom.min.css">
-      <publishTime>03/30/2017 21:38:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="assets/layouts/layout6/css/layout.css">
       <publishTime>03/30/2017 21:29:28</publishTime>
@@ -15688,13 +15688,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/30/2017 21:29:28</publishTime>
     </File>
     <File Include="assets/pages/css/lock-2.min.css">
-      <publishTime>03/30/2017 21:38:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="assets/pages/css/lock.css">
       <publishTime>03/30/2017 21:29:28</publishTime>
     </File>
     <File Include="assets/pages/css/lock.min.css">
-      <publishTime>03/30/2017 21:38:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="assets/pages/css/login-2.css">
       <publishTime>03/30/2017 21:29:28</publishTime>
@@ -16030,7 +16030,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/30/2017 21:29:30</publishTime>
     </File>
     <File Include="assets/pages/img/login/logo.png">
-      <publishTime>09/05/2017 16:47:39</publishTime>
+      <publishTime>05/09/2017 16:47:39</publishTime>
     </File>
     <File Include="assets/pages/img/logo-big-white.png">
       <publishTime>03/30/2017 21:29:30</publishTime>
@@ -16606,13 +16606,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/30/2017 21:32:14</publishTime>
     </File>
     <File Include="assets/pages/scripts/coming-soon.min.js">
-      <publishTime>03/30/2017 21:38:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="assets/pages/scripts/components-bootstrap-maxlength.js">
       <publishTime>03/30/2017 21:32:14</publishTime>
     </File>
     <File Include="assets/pages/scripts/components-bootstrap-maxlength.min.js">
-      <publishTime>03/30/2017 21:38:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="assets/pages/scripts/components-bootstrap-multiselect.js">
       <publishTime>03/30/2017 21:32:14</publishTime>
@@ -17155,22 +17155,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2016 16:07:42</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.DependencyCollector.dll">
-      <publishTime>12/07/2016 11:45:42</publishTime>
+      <publishTime>07/12/2016 11:45:42</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
-      <publishTime>12/07/2016 11:50:34</publishTime>
+      <publishTime>07/12/2016 11:50:34</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
-      <publishTime>12/06/2016 15:15:48</publishTime>
+      <publishTime>06/12/2016 15:15:48</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Web.dll">
-      <publishTime>12/07/2016 11:49:10</publishTime>
+      <publishTime>07/12/2016 11:49:10</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.WindowsServer.dll">
-      <publishTime>12/07/2016 11:50:34</publishTime>
+      <publishTime>07/12/2016 11:50:34</publishTime>
     </File>
     <File Include="bin/Microsoft.ApplicationInsights.dll">
-      <publishTime>12/06/2016 15:09:52</publishTime>
+      <publishTime>06/12/2016 15:09:52</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>06/15/2015 02:06:24</publishTime>
@@ -17179,10 +17179,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/23/2012 15:23:58</publishTime>
     </File>
     <File Include="bin/NetasNMS.dll">
-      <publishTime>09/06/2017 11:27:15</publishTime>
+      <publishTime>06/09/2017 11:27:15</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>08/03/2014 20:33:56</publishTime>
+      <publishTime>03/08/2014 20:33:56</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>06/18/2015 20:19:46</publishTime>
@@ -18271,22 +18271,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/16/2017 06:28:55</publishTime>
     </File>
     <File Include="Views/Reporting/AcknowledgeEventAlarmsReport.cshtml">
-      <publishTime>09/06/2017 11:25:21</publishTime>
+      <publishTime>06/09/2017 11:25:21</publishTime>
     </File>
     <File Include="Views/Reporting/EventAlarmsReport.cshtml">
-      <publishTime>09/06/2017 11:25:21</publishTime>
+      <publishTime>06/09/2017 11:25:21</publishTime>
     </File>
     <File Include="Views/Reporting/InventoryReport.cshtml">
-      <publishTime>09/06/2017 11:25:21</publishTime>
+      <publishTime>06/09/2017 11:25:21</publishTime>
     </File>
     <File Include="Views/Reporting/NetworkReport.cshtml">
-      <publishTime>09/06/2017 11:25:21</publishTime>
+      <publishTime>06/09/2017 11:25:21</publishTime>
     </File>
     <File Include="Views/Reporting/SyslogEventAlarmsReport.cshtml">
-      <publishTime>09/06/2017 11:25:21</publishTime>
+      <publishTime>06/09/2017 11:25:21</publishTime>
     </File>
     <File Include="Views/Reporting/WLANReport.cshtml">
-      <publishTime>09/06/2017 11:25:21</publishTime>
+      <publishTime>06/09/2017 11:25:21</publishTime>
     </File>
     <File Include="Views/ScheduleTasks/DownloadFile.cshtml">
       <publishTime>08/16/2017 06:28:55</publishTime>
@@ -18298,40 +18298,40 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/16/2017 06:28:55</publishTime>
     </File>
     <File Include="Views/Shared/_AlarmOnNEs.cshtml">
-      <publishTime>09/06/2017 11:35:26</publishTime>
+      <publishTime>09/06/2017 11:38:49</publishTime>
     </File>
     <File Include="Views/Shared/_BreadcumbAction.cshtml">
       <publishTime>08/16/2017 13:17:10</publishTime>
     </File>
     <File Include="Views/Shared/_ClientRadioTypes.cshtml">
-      <publishTime>09/06/2017 11:35:14</publishTime>
+      <publishTime>06/09/2017 11:35:14</publishTime>
     </File>
     <File Include="Views/Shared/_CpuUsageTable.cshtml">
-      <publishTime>09/06/2017 11:35:15</publishTime>
+      <publishTime>06/09/2017 11:35:15</publishTime>
     </File>
     <File Include="Views/Shared/_CurrentAlarms.cshtml">
-      <publishTime>08/24/2017 10:37:52</publishTime>
+      <publishTime>09/06/2017 11:38:44</publishTime>
     </File>
     <File Include="Views/Shared/_DeviceResourceStatistics.cshtml">
-      <publishTime>09/06/2017 11:35:15</publishTime>
+      <publishTime>06/09/2017 11:35:15</publishTime>
     </File>
     <File Include="Views/Shared/_Footer.cshtml">
       <publishTime>08/14/2017 12:25:47</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>09/06/2017 11:25:21</publishTime>
+      <publishTime>06/09/2017 11:25:21</publishTime>
     </File>
     <File Include="Views/Shared/_MainDashboardFirstRowStatistics.cshtml">
-      <publishTime>08/24/2017 11:42:06</publishTime>
+      <publishTime>09/06/2017 11:49:17</publishTime>
     </File>
     <File Include="Views/Shared/_MemoryUsageTable.cshtml">
-      <publishTime>09/06/2017 11:35:17</publishTime>
+      <publishTime>06/09/2017 11:35:17</publishTime>
     </File>
     <File Include="Views/Shared/_NavigationMenu.cshtml">
       <publishTime>08/16/2017 13:17:10</publishTime>
     </File>
     <File Include="Views/Shared/_NetworkDeviceStatus.cshtml">
-      <publishTime>09/06/2017 11:35:17</publishTime>
+      <publishTime>06/09/2017 11:35:17</publishTime>
     </File>
     <File Include="Views/Shared/_PageAction.cshtml">
       <publishTime>08/11/2017 21:31:27</publishTime>
@@ -18346,13 +18346,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/24/2017 13:50:25</publishTime>
     </File>
     <File Include="Views/Shared/_UpStreamTrafficAndChannelUsageTable.cshtml">
-      <publishTime>08/17/2017 12:37:31</publishTime>
+      <publishTime>09/06/2017 11:38:44</publishTime>
     </File>
     <File Include="Views/Shared/_WirelessResourceStats.cshtml">
-      <publishTime>08/24/2017 10:44:50</publishTime>
+      <publishTime>09/06/2017 11:38:44</publishTime>
     </File>
     <File Include="Views/Shared/_WLANUserCountStats.cshtml">
-      <publishTime>09/06/2017 11:35:17</publishTime>
+      <publishTime>06/09/2017 11:35:17</publishTime>
     </File>
     <File Include="Views/System/ImportExport.cshtml">
       <publishTime>08/16/2017 06:28:55</publishTime>
@@ -18367,7 +18367,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/11/2017 11:32:49</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/05/2017 16:45:20</publishTime>
+      <publishTime>05/09/2017 16:45:20</publishTime>
     </File>
   </ItemGroup>
 </Project>
