@@ -1,4 +1,4 @@
-﻿@*<div id="acStatusFirstRow">
+﻿<div id="acStatusFirstRow">
     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <div class="dashboard-stat2 ">
             <div class="display">
@@ -103,7 +103,7 @@
             </div>
         </div>
     </div>
-</div>*@
+</div>
 
 <div id="apStatusFirstRow">
     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -227,23 +227,26 @@
 
     $(document).ready(function () {
         ///// -------- AC Part -------- /////
-        //var FirstRowAcStatusViewModel = function (modelView) {
-        //    var self = this;
-        //    ko.mapping.fromJS(modelView, {}, this);
-        //    if (!self.Online()) self.Online(0);
-        //    if (!self.Offline()) self.Offline(0);
-        //    this.Total = ko.computed(function () { return self.Online() + self.Offline() });
-        //    this.OnlinePercentage = ko.computed(function () { return self.Online() / self.Total() * 100 });
-        //    this.OfflinePercentage = ko.computed(function () { return self.Offline() / self.Total() * 100 });
-        //}
+        var FirstRowAcStatusViewModel = function (modelView) {
+            var self = this;
+            ko.mapping.fromJS(modelView, {}, this);
+            if (!self.Online()) self.Online(0);
+            if (!self.Offline()) self.Offline(0);
+            this.Total = ko.computed(function () { return self.Online() + self.Offline() });
+            this.OnlinePercentage = ko.computed(function () { return self.Online() / self.Total() * 100 });
+            this.OfflinePercentage = ko.computed(function () { return self.Offline() / self.Total() * 100 });
+        }
 
-        //$.ajax({
-        //    url: "http://217.78.97.240:8081/data/dashboard/acStatus",
-        //    success: function (deviceStatus) {
-        //        ko.applyBindings(new FirstRowAcStatusViewModel(deviceStatus), document.getElementById('acStatusFirstRow'));
-        //        PieCharts.initEasyPieCharts(new FirstRowAcStatusViewModel(deviceStatus));
-        //    }
-        //});
+        $.ajax({
+            url: "http://217.78.97.240:8081/data/dashboard/acStatus",
+            success: function (deviceStatus) {
+                ko.applyBindings(new FirstRowAcStatusViewModel(deviceStatus), document.getElementById('acStatusFirstRow'));
+                $("[data-counter='counterup']").counterUp({
+                    delay: 10,
+                    time: 1000
+                });
+            }
+        });
         ///// -------- AC Part -------- /////
 
         ///// -------- AP Part -------- /////
