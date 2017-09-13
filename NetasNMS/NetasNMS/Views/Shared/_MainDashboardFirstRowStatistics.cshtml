@@ -4,7 +4,7 @@
             <div class="display">
                 <div class="number">
                     <h3 class="font-blue-sharp">
-                        <span data-counter="counterup" data-bind="attr: { 'data-value': Total() }">0</span>
+                        <span data-counter="counterup" data-bind="text: Total()">0</span>
                     </h3>
                     <small>TOTAL WLC</small>
                 </div>
@@ -19,7 +19,7 @@
                     </span>
                 </div>
                 <div class="status">
-                    <div class="status-title" style="font-size:10px"> progress </div>
+                    <div class="status-title" style="font-size:10px">progress</div>
                     <div class="status-number">100%</div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
             <div class="display">
                 <div class="number">
                     <h3 class="font-green-sharp">
-                        <span data-counter="counterup" data-bind="attr: { 'data-value': Online() }">0</span>
+                        <span data-counter="counterup_ac" data-bind="text:Online()">0</span>
                     </h3>
                     <small>MANAGED WLC</small>
                 </div>
@@ -40,13 +40,13 @@
             </div>
             <div class="progress-info">
                 <div class="progress">
-                    <span data-bind="style : {width:  Online() }" class="progress-bar progress-bar-success green-sharp">
-                        <span class="sr-only"><span data-bind="text : Online()"></span>% progress</span>
+                    <span data-bind="style : { width:  OnlinePercentage() + '%' }" class="progress-bar progress-bar-success green-sharp">
+                        <span class="sr-only"><span data-bind="text : OnlinePercentage()"></span>% progress</span>
                     </span>
                 </div>
                 <div class="status">
                     <div class="status-title" style="font-size:10px"> progress </div>
-                    <div class="status-number"><span data-bind="text : Online()"></span>%</div>
+                    <div class="status-number"><span data-bind="text : OnlinePercentage()"></span>%</div>
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@
             <div class="display">
                 <div class="number">
                     <h3 class="font-red-haze">
-                        <span data-counter="counterup" data-bind="attr: { 'data-value': Offline() }">0</span>
+                        <span data-counter="counterup_ac" data-bind="text:Offline()">0</span>
                     </h3>
                     <small>OFFLINE WLC</small>
                 </div>
@@ -66,13 +66,13 @@
             </div>
             <div class="progress-info">
                 <div class="progress">
-                    <span data-bind="style : {width: Offline() }" class="progress-bar progress-bar-success red-haze">
-                        <span class="sr-only"><span data-bind="text : Offline()"></span>% progress</span>
+                    <span data-bind="style : { width: OfflinePercentage() + '%' }" class="progress-bar progress-bar-success red-haze">
+                        <span class="sr-only"><span data-bind="text : OfflinePercentage()"></span>% progress</span>
                     </span>
                 </div>
                 <div class="status">
                     <div class="status-title" style="font-size:10px"> progress </div>
-                    <div class="status-number"><span data-bind="text : Offline()"></span>% </div>
+                    <div class="status-number"><span data-bind="text : OfflinePercentage()"></span>% </div>
                 </div>
             </div>
         </div>
@@ -82,7 +82,7 @@
             <div class="display">
                 <div class="number">
                     <h3 class="font-blue-dark">
-                        <span data-counter="counterup" data-value="7800">0</span>
+                        <span data-counter="counterup_ac" data-value="7800">0</span>
                     </h3>
                     <small>TOTAL THROUGHTPUT</small>
                 </div>
@@ -98,7 +98,7 @@
                 </div>
                 <div class="status">
                     <div class="status-title" style="font-size:10px"> progress </div>
-                    <div class="status-number"> 76% </div>
+                    <div class="status-number">76%</div>
                 </div>
             </div>
         </div>
@@ -126,7 +126,7 @@
                     </span>
                 </div>
                 <div class="status">
-                    <div class="status-title" style="font-size:10px"> progress </div>
+                    <div class="status-title" style="font-size:10px">progress</div>
                     <div class="status-number">100%</div>
                 </div>
             </div>
@@ -148,12 +148,12 @@
             <div class="progress-info">
                 <div class="progress">
                     <span data-bind="style : { width: ManagedPercentage() + '%' }" class="progress-bar progress-bar-success green-sharp">
-                        <span class="sr-only"><span data-bind="text: Managed()"></span>% progress</span>
+                        <span class="sr-only"><span data-bind="text: ManagedPercentage()"></span>% progress</span>
                     </span>
                 </div>
                 <div class="status">
                     <div class="status-title" style="font-size:10px"> progress </div>
-                    <div class="status-number"><span data-bind="text: Managed()"></span>%</div>
+                    <div class="status-number"><span data-bind="text: ManagedPercentage()"></span>%</div>
                 </div>
             </div>
         </div>
@@ -173,13 +173,13 @@
             </div>
             <div class="progress-info">
                 <div class="progress">
-                    <span data-bind="style : {width: Connection_Failed() }" class="progress-bar progress-bar-success red-haze">
-                        <span class="sr-only"><span data-bind="text: Connection_Failed()"></span>% progress</span>
+                    <span data-bind="style : {width: ConnectionFailedPercentage() + '%' }" class="progress-bar progress-bar-success red-haze">
+                        <span class="sr-only"><span data-bind="text: ConnectionFailedPercentage()"></span>% progress</span>
                     </span>
                 </div>
                 <div class="status">
                     <div class="status-title" style="font-size:10px"> progress </div>
-                    <div class="status-number"><span data-bind="text: Connection_Failed()"></span></div>
+                    <div class="status-number"><span data-bind="text: ConnectionFailedPercentage()"></span>%</div>
                 </div>
             </div>
         </div>
@@ -241,7 +241,7 @@
             url: "http://217.78.97.240:8081/data/dashboard/acStatus",
             success: function (deviceStatus) {
                 ko.applyBindings(new FirstRowAcStatusViewModel(deviceStatus), document.getElementById('acStatusFirstRow'));
-                $("[data-counter='counterup']").counterUp({
+                $("[data-counter='counterup_ac']").counterUp({
                     delay: 10,
                     time: 1000
                 });
