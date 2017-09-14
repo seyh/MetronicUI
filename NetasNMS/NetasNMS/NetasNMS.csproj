@@ -5129,7 +5129,10 @@
     <Content Include="assets\pages\img\login\bg3.jpg" />
     <Content Include="assets\pages\img\login\bg4.jpg" />
     <Content Include="assets\pages\img\login\login-invert.png" />
+    <Content Include="assets\pages\img\login\login_logo.png" />
     <Content Include="assets\pages\img\login\logo.png" />
+    <Content Include="assets\pages\img\login\logo_netas.png" />
+    <Content Include="assets\pages\img\login\logo_small.png" />
     <Content Include="assets\pages\img\logo-big-white.png" />
     <Content Include="assets\pages\img\logo-big.png" />
     <Content Include="assets\pages\img\logo-invert.png" />
