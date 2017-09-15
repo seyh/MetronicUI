@@ -4,7 +4,7 @@
             <div class="display">
                 <div class="number">
                     <h3 class="font-blue-sharp">
-                        <span data-counter="counterup" data-bind="text: Total()">0</span>
+                        <span data-counter="counterup_ac" data-bind="text: TotalAC()">0</span>
                     </h3>
                     <small>TOTAL WLC</small>
                 </div>
@@ -111,7 +111,7 @@
             <div class="display">
                 <div class="number">
                     <h3 class="font-blue-dark">
-                        <span data-counter="counterup" data-bind="text: Total()">0</span>
+                        <span data-counter="counterup" data-bind="text: TotalAP()">0</span>
                     </h3>
                     <small>TOTAL AP</small>
                 </div>
@@ -232,9 +232,9 @@
             ko.mapping.fromJS(modelView, {}, this);
             if (!self.Online()) self.Online(0);
             if (!self.Offline()) self.Offline(0);
-            this.Total = ko.computed(function () { return self.Online() + self.Offline() });
-            this.OnlinePercentage = ko.computed(function () { return self.Online() / self.Total() * 100 });
-            this.OfflinePercentage = ko.computed(function () { return self.Offline() / self.Total() * 100 });
+            this.TotalAC = ko.computed(function () { return self.Online() + self.Offline() });
+            this.OnlinePercentage = ko.computed(function () { return self.Online() / self.TotalAC() * 100 });
+            this.OfflinePercentage = ko.computed(function () { return self.Offline() / self.TotalAC() * 100 });
         }
 
         $.ajax({
@@ -255,9 +255,9 @@
             ko.mapping.fromJS(modelView, {}, this);
             if (!self.Managed()) self.Managed(0);
             if (!self.Connection_Failed()) self.Connection_Failed(0);
-            this.Total = ko.computed(function () { return self.Managed() + self.Connection_Failed() });
-            this.ManagedPercentage = ko.computed(function () { return self.Managed() / self.Total() * 100 });
-            this.ConnectionFailedPercentage = ko.computed(function () { return self.Connection_Failed() / self.Total() * 100 });
+            this.TotalAP = ko.computed(function () { return self.Managed() + self.Connection_Failed() });
+            this.ManagedPercentage = ko.computed(function () { return self.Managed() / self.TotalAP() * 100 });
+            this.ConnectionFailedPercentage = ko.computed(function () { return self.Connection_Failed() / self.TotalAP() * 100 });
         }
 
         $.ajax({

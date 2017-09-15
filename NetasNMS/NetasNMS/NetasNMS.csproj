@@ -6231,7 +6231,7 @@
     <Content Include="Views\ScheduleTasks\DownloadFile.cshtml" />
     <Content Include="Views\ScheduleTasks\Report.cshtml" />
     <Content Include="Views\ScheduleTasks\Reboot.cshtml" />
-    <Content Include="Views\Monitor\CurrentAlarms.cshtml" />
+    <Content Include="Views\Monitor\ActiveAlarms.cshtml" />
     <Content Include="Views\Monitor\HistoricalAlarms.cshtml" />
     <Content Include="Views\Monitor\ACNetworkMonitor.cshtml" />
     <Content Include="Views\Monitor\APNetworkMonitor.cshtml" />
@@ -6245,6 +6245,8 @@
     <Content Include="Views\Reporting\AcknowledgeEventAlarmsReport.cshtml" />
     <Content Include="Views\Reporting\SyslogEventAlarmsReport.cshtml" />
     <None Include="Properties\PublishProfiles\NMS.pubxml" />
+    <Content Include="Views\Monitor\AcknowledgeAlarms.cshtml" />
+    <Content Include="Views\Monitor\APRadioNetworkMonitor.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

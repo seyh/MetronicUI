@@ -9,12 +9,17 @@ namespace NetasNMS.Controllers
     public class MonitorController : Controller
     {
         // GET: Monitor
-        public ActionResult CurrentAlarms()
+        public ActionResult ActiveAlarms()
         {
             return View();
         }
 
         public ActionResult HistoricalAlarms()
+        {
+            return View();
+        }
+
+        public ActionResult AcknowledgeAlarms()
         {
             return View();
         }
@@ -28,6 +33,12 @@ namespace NetasNMS.Controllers
         {
             return View();
         }
+
+        public ActionResult APRadioNetworkMonitor()
+        {
+            return View();
+        }
+       
 
         public ActionResult ClientNetworkMonitor()
         {
