@@ -6244,6 +6244,7 @@
     <Content Include="Views\Reporting\EventAlarmsReport.cshtml" />
     <Content Include="Views\Reporting\AcknowledgeEventAlarmsReport.cshtml" />
     <Content Include="Views\Reporting\SyslogEventAlarmsReport.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\NMS.pubxml" />
     <Content Include="Views\Monitor\AcknowledgeAlarms.cshtml" />
     <Content Include="Views\Monitor\APRadioNetworkMonitor.cshtml" />

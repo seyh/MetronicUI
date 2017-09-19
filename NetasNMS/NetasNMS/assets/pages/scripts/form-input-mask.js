@@ -44,6 +44,7 @@ var FormInputMask = function () {
 
     var handleIPAddressInput = function () {
         $('#input_ipv4').ipAddress();
+        $('#input_ipv5').ipAddress();
         $('#input_ipv6').ipAddress({
             v: 6
         });
