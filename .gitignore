@@ -211,3 +211,5 @@ NetasNMS/.vs/config/applicationhost.config
 NetasNMS/.vs/NetasNMS/v14/.suo
 NetasNMS/.vs/NetasNMS.sqlite
 NetasNMS/.vs/NetasNMS/v15/sqlite3/storage.ide
+NetasNMS/NetasNMS/Properties/PublishProfiles/CustomProfile.pubxml
+NetasNMS/NetasNMS/Properties/PublishProfiles/CustomProfile.pubxml.user
