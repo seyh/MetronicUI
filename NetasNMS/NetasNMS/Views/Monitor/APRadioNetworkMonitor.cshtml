@@ -44,6 +44,7 @@
                                 <div class="alert alert-success display-hide">
                                     <button class="close" data-close="alert"></button> Your form validation is successful!
                                 </div>
+                                <!-------------------------Time Filter Begin----------------------------->
                                 <div class="form-group form-md-radios">
                                     <label style="border-bottom: 1px solid #eee; text-align:left; font-weight:bold" class="control-label  col-md-12" for="form_control_1">Time Filter</label>
                                 </div>
@@ -110,116 +111,123 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-------------------------Time Filter End----------------------------->
+                                <!-------------------------Group Filter Begin----------------------------->
                                 <div class="form-group form-md-radios">
                                     <label style="border-bottom: 1px solid #eee; text-align:left; font-weight:bold" class="control-label  col-md-12" for="form_control_1">Group Filter</label>
                                 </div>
-                                <div class="form-group form-md-radios">
-                                    <div class="col-md-1">
-                                        <div class="md-radio-inline">
-                                            <div class="md-radio">
-                                                <input type="radio" id="checkbox1_3" name="radio2" value="1" class="md-radiobtn">
-                                                <label for="checkbox1_3">
-                                                    <span></span>
-                                                    <span class="check"></span>
-                                                    <span class="box"></span>
-                                                </label>
+                                <div class="form-body">
+                                    <div class="form-group form-md-radios">
+                                        <div class="col-md-1">
+                                            <div class="md-radio-inline">
+                                                <div class="md-radio">
+                                                    <input type="radio" id="checkbox1_3" name="radio2" value="1" class="md-radiobtn">
+                                                    <label for="checkbox1_3">
+                                                        <span></span>
+                                                        <span class="check"></span>
+                                                        <span class="box"></span>
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
+                                        <label class="col-md-2 control-label" for="form_control_1" style="text-align:left">
+                                            None
+                                        </label>
                                     </div>
-                                    <label class="col-md-2 control-label" for="form_control_1" style="text-align:left">
-                                        None
-                                    </label>
+                                    <div class="form-group">
+                                        <div class="col-md-1">
+                                            <div class="md-radio-inline">
+                                                <div class="md-radio">
+                                                    <input type="radio" id="checkbox1_4" name="radio2" value="1" class="md-radiobtn">
+                                                    <label for="checkbox1_4">
+                                                        <span></span>
+                                                        <span class="check"></span>
+                                                        <span class="box"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <button type="submit" class="btn green"><i class="fa fa-sitemap"></i></button>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <button type="submit" class="btn green"><i class="fa fa-eye"></i></button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-group form-md-radios">
-                                    <div class="col-md-1">
-                                        <div class="md-radio-inline">
-                                            <div class="md-radio">
-                                                <input type="radio" id="checkbox1_4" name="radio2" value="1" class="md-radiobtn">
-                                                <label for="checkbox1_4">
-                                                    <span></span>
-                                                    <span class="check"></span>
-                                                    <span class="box"></span>
-                                                </label>
+                                    <!-------------------------Group Filter End----------------------------->
+                                    <!-------------------------Column Filter Begin----------------------------->
+                                    <div class="form-group form-md-radios">
+                                        <label style="border-bottom: 1px solid #eee; text-align:left; font-weight:bold" class="control-label  col-md-12" for="form_control_1">Column Filter</label>
+                                    </div>
+                                <div class="form-body">
+                                    <div class="form-group form-md-radios">
+                                        <div class="col-md-1">
+                                            <div class="md-radio-inline">
+                                                <div class="md-radio">
+                                                    <input type="radio" id="checkbox1_5" name="radio2" value="1" class="md-radiobtn">
+                                                    <label for="checkbox1_5">
+                                                        <span></span>
+                                                        <span class="check"></span>
+                                                        <span class="box"></span>
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
+                                        <label class="col-md-2 control-label" for="form_control_1" style="text-align:left">
+                                            None
+                                        </label>
                                     </div>
-                                    <div class="col-md-1">
-                                        <button type="submit" class="btn green"><i class="fa fa-sitemap"></i></button>
-                                    </div>
-                                    <div class="col-md-1">
-                                        <button type="submit" class="btn green"><i class="fa fa-eye"></i></button>
+                                    <div class="form-group">
+                                        <div class="col-md-1">
+                                            <div class="md-radio-inline">
+                                                <div class="md-radio">
+                                                    <input type="radio" id="checkbox1_6" name="radio2" value="1" class="md-radiobtn">
+                                                    <label for="checkbox1_6">
+                                                        <span></span>
+                                                        <span class="check"></span>
+                                                        <span class="box"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group form-md-line-input">
+                                            <div class="col-md-4">
+                                                <select class="bs-select form-control">
+                                                    <option value="0">Name</option>
+                                                    <option value="1">Ip Address</option>
+                                                    <option value="2">MAC Address </option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="input-icon">
+                                                    <input type="text" class="form-control" placeholder="Enter special device" name="digits">
+                                                    <div class="form-control-focus"> </div>
+                                                    <i class="fa fa-edit"></i>
+                                                    <span class="help-block">Enter special device</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="form-group form-md-radios">
-                                    <label style="border-bottom: 1px solid #eee; text-align:left; font-weight:bold" class="control-label  col-md-12" for="form_control_1">Column Filter</label>
-                                </div>
-                                <div class="form-group form-md-radios">
-                                    <div class="col-md-1">
-                                        <div class="md-radio-inline">
-                                            <div class="md-radio">
-                                                <input type="radio" id="checkbox1_5" name="radio2" value="1" class="md-radiobtn">
-                                                <label for="checkbox1_5">
-                                                    <span></span>
-                                                    <span class="check"></span>
-                                                    <span class="box"></span>
-                                                </label>
-                                            </div>
-                                        </div>
+                                    <!-------------------------Column Filter End----------------------------->
+                                    <!-------------------------Device Filter Begin----------------------------->
+                                    <div class="form-group form-md-radios">
+                                        <label style="border-bottom: 1px solid #eee; text-align:left; font-weight:bold" class="control-label  col-md-12" for="form_control_1">Device Status Filter</label>
                                     </div>
-                                    <label class="col-md-2 control-label" for="form_control_1" style="text-align:left">
-                                        None
-                                    </label>
-                                </div>
-                                <div class="form-group form-md-line-input">
-                                    <div class="md-radio-inline">
-                                        <div class="col-md-1">
-                                            <div class="md-radio">
-                                                <input type="radio" id="checkbox1_6" name="radio2" value="1" class="md-radiobtn">
-                                                <label for="checkbox1_6">
-                                                    <span></span>
-                                                    <span class="check"></span>
-                                                    <span class="box"></span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <label style="text-align:left" class="col-md-2 control-label" for="form_control_1">
-                                        IP range
-                                    </label>
-                                    <div class="col-md-4">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-10">
                                         <div class="form-group">
                                             <select class="bs-select form-control">
-                                                <option value="0">Name</option>
-                                                <option value="1">Ip Address</option>
-                                                <option value="2">MAC Address </option>
+                                                <option value="0">All</option>
+                                                <option value="1">Good</option>
+                                                <option value="2">Warning </option>
+                                                <option value="3">Unreachable</option>
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-5">
-                                        <div class="input-icon">
-                                            <input type="text" class="form-control" placeholder="Enter IP Address" name="digits">
-                                            <div class="form-control-focus"> </div>
-                                            <i class="fa fa-edit"></i>
-                                            <span class="help-block">For example: 192.168.1.2</span>
-                                        </div>
-                                    </div>
                                 </div>
-                                <div class="form-group form-md-radios">
-                                    <label style="border-bottom: 1px solid #eee; text-align:left; font-weight:bold" class="control-label  col-md-12" for="form_control_1">Device Status Filter</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="form-group">
-                                        <select class="bs-select form-control">
-                                            <option value="0">All</option>
-                                            <option value="1">Good</option>
-                                            <option value="2">Warning </option>
-                                            <option value="3">Unreachable</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-2"></div>
-                            </div>
                             <div class="form-actions">
                                 <div class="row">
                                     <div class="col-md-offset-3 col-md-9">
