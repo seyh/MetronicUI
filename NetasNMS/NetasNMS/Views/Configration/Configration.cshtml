@@ -24,12 +24,94 @@
                     <span>Configration</span>
                 </li>
             </ul>
-            <div class="page-toolbar">
-                <div class="btn-group pull-right">
-                    <span type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
-                        Actions
-                    </span>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <!-- BEGIN VALIDATION STATES-->
+                <div class="portlet light ">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class=" icon-settings font-green"></i>
+                            <span class="caption-subject font-green sbold uppercase">DEVICE MAP</span>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <ul class="file-tree">
+                            <li>
+                                <a href="#">US</a>
+                                <ul>
+                                    <li>
+                                        <a href="#">New York</a>
+                                        <ul>
+                                            <li>
+                                                <a href="#">Corporation</a>
+                                                <ul>
+                                                    <li> <a href="#link5">Link 5</a> </li>
+                                                    <li> <a href="#link6">Link 6</a> </li>
+                                                    <li> <a href="#link7">Link 7</a> </li>
+                                                    <li> <a href="#link8">Link 8</a> </li>
+                                                    <li>
+                                                        <a href="#">Deeper</a>
+                                                        <ul>
+                                                            <li><a href="#">Link 1</a> </li>
+                                                            <li><a href="#">Link 2</a> </li>
+                                                            <li><a href="#">Link 3</a> </li>
+                                                            <li><a href="#">Link 4</a> </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#">LLC</a>
+                                                <ul>
+                                                    <li> <a href="#link5">Link 5</a> </li>
+                                                    <li> <a href="#link6">Link 6</a> </li>
+                                                    <li> <a href="#link7">Link 7</a> </li>
+                                                    <li> <a href="#link8">Link 8</a> </li>
+                                                    <li>
+                                                        <a href="#">Deeper</a>
+                                                        <ul>
+                                                            <li><a href="#">Link 1</a> </li>
+                                                            <li><a href="#">Link 2</a> </li>
+                                                            <li><a href="#">Link 3</a> </li>
+                                                            <li><a href="#">Link 4</a> </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#link2">Link 2</a> </li>
+                                    <li><a href="#link3">Link 3</a> </li>
+                                    <li><a href="#link4">Link 4</a> </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Canada</a>
+                                <ul>
+                                    <li><a href="#">Link 1</a> </li>
+                                    <li><a href="#">Link 2</a> </li>
+                                    <li><a href="#">Link 3</a> </li>
+                                    <li><a href="#">Link 4</a> </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+                <!-- END VALIDATION STATES-->
+            </div>
+            <div class="col-md-7">
+                <!-- BEGIN VALIDATION STATES-->
+                <div class="portlet light ">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class=" icon-settings font-green"></i>
+                            <span class="caption-subject font-green sbold uppercase">DEVICES INFORMATION</span>
+                        </div>
+                    </div>
+                    <div class="portlet-body"></div>
+                </div>
+                <!-- END VALIDATION STATES-->
             </div>
         </div>
         <!-- END PAGE HEADER-->
@@ -38,4 +120,49 @@
     <!-- END CONTENT BODY -->
 </div>
 <!-- END CONTENT -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.fn.filetree = function (method) {
 
+            var settings = { // settings to expose
+                animationSpeed: 'fast',
+                collapsed: true,
+                console: false
+            }
+            var methods = {
+                init: function (options) {
+                    // Get standard settings and merge with passed in values
+                    var options = $.extend(settings, options);
+                    // Do this for every file tree found in the document
+                    return this.each(function () {
+                        var $fileList = $(this);
+                        $fileList
+                            .addClass('file-list')
+                            .find('li')
+                            .has('ul') // Any li that has a list inside is a folder root
+                                .addClass('folder-root closed')
+                                .on('click', 'a[href="#"]', function (e) { // Add a click override for the folder root links
+                                    e.preventDefault();
+                                    $(this).parent().toggleClass('closed').toggleClass('open');
+                                    return false;
+                                });
+
+                        //alert(options.animationSpeed); Are the settings coming in
+
+                    });
+                }
+            }
+            if (typeof method === 'object' || !method) {
+                return methods.init.apply(this, arguments);
+            } else {
+                $.on("error", function () {
+                    console.log(method + " does not exist in the file exploerer plugin");
+                });
+            }
+        }
+        $(".file-tree").filetree();
+        
+
+	});
+</script>
