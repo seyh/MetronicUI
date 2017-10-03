@@ -62,17 +62,15 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div id="severitydrpmodel" class="col-md-3">
                                 <div class="form-group">
-                                    <select class="bs-select form-control">
-                                        <option value="0">Emergency</option>
-                                        <option value="1">Critical</option>
-                                        <option value="2">Alert </option>
-                                        <option value="3">Error</option>
-                                        <option value="4">Warning</option>
-                                        <option value="5">Notice</option>
-                                        <option value="6">Information</option>
-                                    </select>
+                                    <select class="bs-select form-control" data-bind="options: severityOptions, optionsText: 'name', optionValue: 'value', optionsCaption: 'Choose severity'"></select>
+
+                                    <!-- ko with: selectedSeverity -->
+                                    <p>
+                                        Your selection: <span data-bind="text: value"></span>
+                                    </p>
+                                    <!-- /ko -->
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -408,7 +406,12 @@
 <script src="../assets/pages/scripts/table-datatables-responsive.min.js" type="text/javascript"></script>
 
 <script>
-    $(document).ready(function () {
+    $(function () {
+
+        var XHRseverityData = '[{ "value": 0, "name": "Emergency" },{ "value": 1, "name": "Critical" },{ "value": 2, "name": "Alert" }, { "value": 3, "name": "Error" }, { "value": 4, "name": "Warning" }, { "value": 5, "name": "Notice" }, { "value": 6, "name": "Information" }]';
+        //var XHRseverityData;
+
+
         $('.form_date').datetimepicker({
             language: 'tr',
             format: "dd MM yyyy - HH:ii P",
@@ -429,6 +432,27 @@
             pickerPosition: (App.isRTL() ? "bottom-right" : "bottom-left"),
             todayBtn: true
         });
+            
+        var SeverityViewModel = {
+            severityOptions: ko.observableArray([]),
+            selectedSeverity: ko.observable() // Nothing selected by default
+        };
+        SeverityViewModel.severityOptions = ko.mapping.fromJS(JSON.parse(XHRseverityData));
+        SeverityViewModel.selectedSeverity.subscribe(function (latest) {
+            console.log("Input changed");
+        }, SeverityViewModel);
+        ko.applyBindings(SeverityViewModel, document.getElementById('severitydrpmodel'));
+        
 
+        //$.ajax({
+        //    url: "http://217.78.97.240:8081/webCommon/severity.json",
+        //    success: function (XHRseverity) {
+        //        SeverityViewModel.severityOptions = ko.mapping.fromJS(JSON.parse(XHRseverity));
+        //        SeverityViewModel.selectedSeverity.subscribe(function (latest) {
+        //            console.log("Input changed");
+        //        }, SeverityViewModel);
+        //        ko.applyBindings(SeverityViewModel, document.getElementById('severitydrpmodel'));
+        //    }
+        //});
     });
 </script>   
