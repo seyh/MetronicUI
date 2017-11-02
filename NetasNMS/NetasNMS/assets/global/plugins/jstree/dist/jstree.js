@@ -55,7 +55,7 @@
 	_temp1.setAttribute('href','#');
 	_temp1.setAttribute('tabindex','-1');
 	_temp2 = document.createElement('I');
-	_temp2.className = 'jstree-icon jstree-themeicon';
+	_temp2.className = 'fa fa-sitemap';
 	_temp2.setAttribute('role', 'presentation');
 	_temp1.appendChild(_temp2);
 	_node.appendChild(_temp1);
@@ -5582,7 +5582,7 @@
 					        "action": function (data) {
 					            var inst = $.jstree.reference(data.reference),
                                     obj = inst.get_node(data.reference);
-					            inst.create_node(obj, { type: "default" }, "last", function (new_node) {
+					            inst.create_node(obj, { type: "folder" }, "last", function (new_node) {
 					                setTimeout(function () { inst.edit(new_node); }, 0);
 					            });
 					        }
