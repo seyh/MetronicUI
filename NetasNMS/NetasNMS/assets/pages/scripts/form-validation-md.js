@@ -133,7 +133,7 @@ var FormValidationMd = function() {
     var handleValidation2 = function() {
         // for more info visit the official plugin documentation: 
         // http://docs.jquery.com/Plugins/Validation
-        var form1 = $('#form_sample_2');
+        var form1 = $('#acnetworkmonitorform');
         var error1 = $('.alert-danger', form1);
         var success1 = $('.alert-success', form1);
 
@@ -218,6 +218,9 @@ var FormValidationMd = function() {
                     required: true
                 },
                 radio2: {
+                    required: true
+                },
+                radio3: {
                     required: true
                 }
             },
