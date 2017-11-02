@@ -5574,12 +5574,29 @@
 					"separator_after"	: true,
 					"_disabled"			: false, //(this.check("create_node", data.reference, {}, "last")),
 					"label"				: "Create",
-					"action"			: function (data) {
-						var inst = $.jstree.reference(data.reference),
-							obj = inst.get_node(data.reference);
-						inst.create_node(obj, {}, "last", function (new_node) {
-							setTimeout(function () { inst.edit(new_node); },0);
-						});
+					"action": false,
+					"submenu": {
+					    "create_folder": {
+					        "separator_after": true,
+					        "label": "Folder",
+					        "action": function (data) {
+					            var inst = $.jstree.reference(data.reference),
+                                    obj = inst.get_node(data.reference);
+					            inst.create_node(obj, { type: "default" }, "last", function (new_node) {
+					                setTimeout(function () { inst.edit(new_node); }, 0);
+					            });
+					        }
+					    },
+					    "create_file": {
+					        "label": "File",
+					        "action": function (data) {
+					            var inst = $.jstree.reference(data.reference),
+                                    obj = inst.get_node(data.reference);
+					            inst.create_node(obj, { type: "file" }, "last", function (new_node) {
+					                setTimeout(function () { inst.edit(new_node); }, 0);
+					            });
+					        }
+					    }
 					}
 				},
 				"rename" : {
