@@ -254,15 +254,20 @@
                     </div>
                     <div class="portlet-body">
                         <!-- BEGIN TABLE-->
-                        <table id="activeAlarms" class="table table-striped table-bordered">
+                        <table id="activeAlarms" class="table table-striped table-bordered table-hover dt-responsive">
                             <thead>
                                 <tr>
                                     <th class="all">Record Time</th>
                                     <th class="all">Name</th>
                                     <th class="all">IP Address</th>
                                     <th class="all">Mac Address</th>
-                                    <th class="all">Transmit (MB)</th>
-                                    <th class="all">Recieve (MB)</th>
+                                    <th class="none">Transmit (MB)</th>
+                                    <th class="none">Recieve (MB)</th>
+                                    <th class="none">Managed AP</th>
+                                    <th class="none">Connect Failed AP</th>
+                                    <th class="none">Rouge AP</th>
+                                    <th class="none">Client</th>
+                                    <th class="none">Unknown AP</th>
                                     <th class="all">Action</th>
                                 </tr>
                             </thead>
@@ -284,6 +289,11 @@
                                     <td><span data-bind="text: ac.macaddress()"></span></td>
                                     <td><span data-bind="text: transmitMegabyte()"></span></td>
                                     <td><span data-bind="text: receiveMegabyte()"></span></td>
+                                    <td><span data-bind="text: managedAP()"></span></td>
+                                    <td><span data-bind="text: connectFailedAP()"></span></td>
+                                    <td><span data-bind="text: rougeAP()"></span></td>
+                                    <td><span data-bind="text: client()"></span></td>
+                                    <td><span data-bind="text: unknownAP()"></span></td>
                                     <td></td>
                                 </tr>
                             </tbody>

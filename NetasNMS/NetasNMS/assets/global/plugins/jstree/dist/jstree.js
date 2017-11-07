@@ -5578,21 +5578,21 @@
 					"submenu": {
 					    "create_folder": {
 					        "separator_after": true,
-					        "label": "Folder",
+					        "label": "Group",
 					        "action": function (data) {
 					            var inst = $.jstree.reference(data.reference),
                                     obj = inst.get_node(data.reference);
-					            inst.create_node(obj, { type: "folder" }, "last", function (new_node) {
+					            inst.create_node(obj, { type: "group" }, "last", function (new_node) {
 					                setTimeout(function () { inst.edit(new_node); }, 0);
 					            });
 					        }
 					    },
 					    "create_file": {
-					        "label": "File",
+					        "label": "Device",
 					        "action": function (data) {
 					            var inst = $.jstree.reference(data.reference),
                                     obj = inst.get_node(data.reference);
-					            inst.create_node(obj, { type: "file" }, "last", function (new_node) {
+					            inst.create_node(obj, { type: "device" }, "last", function (new_node) {
 					                setTimeout(function () { inst.edit(new_node); }, 0);
 					            });
 					        }

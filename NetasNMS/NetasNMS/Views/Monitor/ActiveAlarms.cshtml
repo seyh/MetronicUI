@@ -83,8 +83,8 @@
                 </form>
             </div>
         </div>
-        <div id="eventAlarmContent" class="row">
-            <div class="col-md-12">
+        <div class="row">
+            <div id="eventAlarmContent" class="col-md-12">
                 <div class="portlet light ">
                     <div class="portlet-title">
                         <div style="float:left" class="tools">
@@ -182,7 +182,7 @@
                                     <td><span data-bind="text: statistics.count"></span></td>
                                     <td style="text-align:center"><i class="fa" data-bind="style: { color : severity() == 'EMERGENCY' ? 'firebrick' :  severity() == 'CRITICAL' ? 'red' :  severity() == 'ALERT' ? 'red' : severity() == 'ERROR' ? 'coral' :  severity() == 'WARNING' ? 'darkcyan' :  severity() == 'NOTICE' ? '#445deb' :  severity() == 'INFORMATION' ? '#06c2cc' : 'black'}, css: {'fa-bolt' : severity() == 'EMERGENCY', 'fa-bullhorn' : severity() == 'CRITICAL', 'fa-bullseye' : severity() == 'ALERT', 'fa-exclamation-circle' : severity() == 'ERROR', 'fa-warning' : severity() == 'WARNING', 'fa-bell' : severity() == 'NOTICE', 'fa-info-circle' : severity() == 'INFORMATION' }"></i></td>
                                     <td>
-                                        <div class="btn-group pull-right">
+                                        <div class="btn-group">
                                             <button class="btn green btn-xs btn-outline dropdown-toggle" data-toggle="dropdown">
                                                 Tools
                                                 <i class="fa fa-angle-down"></i>
