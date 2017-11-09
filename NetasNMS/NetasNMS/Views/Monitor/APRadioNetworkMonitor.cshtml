@@ -243,7 +243,7 @@
                 </div>
                 <!-- END VALIDATION STATES-->
             </div>
-            <div id="acNetworkMonitor" class="col-md-7">
+            <div id="apRadioNetworkMonitor" class="col-md-7">
                 <!-- BEGIN VALIDATION STATES-->
                 <div class="portlet light ">
                     <div class="portlet-title">
@@ -254,20 +254,20 @@
                     </div>
                     <div class="portlet-body">
                         <!-- BEGIN TABLE-->
-                        <table id="activeAlarms" class="table table-striped table-bordered">
+                        <table id="activeAlarms" class="table table-striped table-bordered table-hover dt-responsive table-checkable">
                             <thead>
                                 <tr>
                                     <th class="all">Record Time</th>
                                     <th class="all">Name</th>
                                     <th class="all">IP Address</th>
                                     <th class="all">Mac Address</th>
-                                    <th class="all">Transmit (MB)</th>
-                                    <th class="all">Recieve (MB)</th>
-                                    <th class="all">Action</th>
+                                    <th class="none">AC Name</th>
+                                    <th class="none">AC IP</th>
+                                    <th class="none">AC Mac</th>
                                 </tr>
                             </thead>
                             <tbody data-bind="dataTablesForEach : {
-			                                data: setTableAcMonitor,
+			                                data: setTableApRadioMonitor,
 			                                options: {
 				                                deferRender: true,
 				                                paging: true,
@@ -279,12 +279,12 @@
 		                                }">
                                 <tr>
                                     <td><a href="#"><span data-bind="text: moment(recordTime()).format('DD-MM-YYYY HH:mm:ss')"></span></a></td>
-                                    <td><span data-bind="text: ac.name()"></span></td>
-                                    <td><span data-bind="text: ac.ipaddress()"></span></td>
-                                    <td><span data-bind="text: ac.macaddress()"></span></td>
-                                    <td><span data-bind="text: transmitMegabyte()"></span></td>
-                                    <td><span data-bind="text: receiveMegabyte()"></span></td>
-                                    <td></td>
+                                    <td><span data-bind=""></span></td>
+                                    <td><span data-bind="text: ap.ipaddress()"></span></td>
+                                    <td><span data-bind="text: ap.macaddress()"></span></td>
+                                    <td><a href="#"><span data-bind="text: controllerName()"></span></a></td>
+                                    <td><a href="#"><span data-bind="text: controllerIP()"></span></a></td>
+                                    <td><a href="#"><span data-bind="text: controllerMac()"></span></a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -382,11 +382,11 @@
             }
         };
 
-        var AcNetworkMonitor = {
-            setTableAcMonitor: ko.observableArray([])
+        var ApRadioNetworkMonitor = {
+            setTableApRadioMonitor: ko.observableArray([])
         };
 
-        ko.applyBindings(AcNetworkMonitor, document.getElementById('acNetworkMonitor'));
+        ko.applyBindings(ApRadioNetworkMonitor, document.getElementById('apRadioNetworkMonitor'));
 
         $("input[name=radioTimeFilter]").change(function () {
             radioTimeFilter = this.value;
@@ -449,7 +449,7 @@
 
         $('#filterQueryBtn').on('click', function ()
         {
-            AcNetworkMonitor.setTableAcMonitor([]);
+            ApRadioNetworkMonitor.setTableApRadioMonitor([]);
 
             if (radioTimeFilter != 'Calender')
             {
@@ -457,16 +457,16 @@
                 {
                     searchContent = $('#searchContent').val();
                     $.ajax({
-                        url: "http://217.78.97.240:8081/data/asset/wirelessInformation/count/ac/" + startDateFilter + "/" + endDateFilter + "/" + groupIdStr + "/" + deviceStatus + "/" + searchColumn + "/" + searchContent,
+                        url: "http://217.78.97.240:8081/data/asset/wirelessInformation/count/apRadio/" + startDateFilter + "/" + endDateFilter + "/" + groupIdStr + "/" + deviceStatus + "/" + searchColumn + "/" + searchContent,
                         success: function (ResponseACMonitorCount) {
                             dataCount = ResponseACMonitorCount;
                         }
                     });
 
                     $.ajax({
-                        url: "http://217.78.97.240:8081/data/asset/wirelessInformation/ac/" + startDateFilter + "/" + endDateFilter + "/100/" + pageIndex + "/" + column + "/" + method + "/" + groupIdStr + "/" + deviceStatus + "/" + searchColumn + "/" + searchContent,
+                        url: "http://217.78.97.240:8081/data/asset/wirelessInformation/apRadio/" + startDateFilter + "/" + endDateFilter + "/100/" + pageIndex + "/" + column + "/" + method + "/" + groupIdStr + "/" + deviceStatus + "/" + searchColumn + "/" + searchContent,
                         success: function (ResponseACMonitors) {
-                            ko.mapping.fromJS(ResponseACMonitors, {}, AcNetworkMonitor.setTableAcMonitor);
+                            ko.mapping.fromJS(ResponseACMonitors, {}, ApRadioNetworkMonitor.setTableApRadioMonitor);
                         }
                     });
 
@@ -478,9 +478,9 @@
                 endDateFilter = (moment($('#filterEndDate').data().date).unix()) * 1000;
                 searchContent = $('#searchContent').val();
                 $.ajax({
-                    url: "http://217.78.97.240:8081/data/asset/wirelessInformation/ac/" + startDateFilter + "/" + endDateFilter + "/100/" + pageIndex + "/" + column + "/" + method + "/" + groupIdStr + "/" + deviceStatus + "/" + searchColumn + "/" + searchContent,
+                    url: "http://217.78.97.240:8081/data/asset/wirelessInformation/apRadio/" + startDateFilter + "/" + endDateFilter + "/100/" + pageIndex + "/" + column + "/" + method + "/" + groupIdStr + "/" + deviceStatus + "/" + searchColumn + "/" + searchContent,
                     success: function (ResponseACMonitors) {
-                        ko.mapping.fromJS(ResponseACMonitors, {}, AcNetworkMonitor.setTableAcMonitor);
+                        ko.mapping.fromJS(ResponseACMonitors, {}, ApRadioNetworkMonitor.setTableApRadioMonitor);
                     }
                 });
             }

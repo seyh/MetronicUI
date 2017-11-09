@@ -149,9 +149,15 @@
                         </div>
                     </div>
                     <div class="portlet-body">
-                        <table class="table table-striped table-bordered">
+                        <table id="acknowledgealarmtable" class="table table-striped table-bordered table-checkable">
                             <thead>
                                 <tr>
+                                    <th>
+                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                            <input type="checkbox" class="group-checkable" data-set="#acknowledgealarmtable .checkboxes" />
+                                            <span></span>
+                                        </label>
+                                    </th>
                                     <th class="all">Source</th>
                                     <th class="all">Description</th>
                                     <th class="all">Date from</th>
@@ -173,6 +179,12 @@
 			                                }
 		                                }">
                                 <tr>
+                                    <td>
+                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                            <input type="checkbox" class="checkboxes" data-bind="value: alertId" value="" />
+                                            <span></span>
+                                        </label>
+                                    </td>
                                     <td><a href="#"><span data-bind="text: source()"></span></a></td>
                                     <td><span data-bind="text: description()"></span></td>
                                     <td>
@@ -450,5 +462,22 @@
             console.log('Start date :' + filterStartDate + ' End date : ' + filterEndDate + ' Severity :' + strSeverity);
         });
 
+        $('#acknowledgealarmtable').find('.group-checkable').change(function () {
+            var set = $(this).attr("data-set");
+            var checked = $(this).is(":checked");
+            $(set).each(function () {
+                if (checked) {
+                    $(this).prop("checked", true);
+                    $(this).parents('tr').addClass("active");
+                } else {
+                    $(this).prop("checked", false);
+                    $(this).parents('tr').removeClass("active");
+                }
+            });
+        });
+
+        $('#acknowledgealarmtable').on('change', 'tbody tr .checkboxes', function () {
+            $(this).parents('tr').toggleClass("active");
+        });
     });
 </script>   
