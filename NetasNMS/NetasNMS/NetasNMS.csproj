@@ -10037,6 +10037,7 @@
     <Compile Include="Controllers\ReportingController.cs" />
     <Compile Include="Controllers\ScheduleTasksController.cs" />
     <Compile Include="Controllers\SystemController.cs" />
+    <Compile Include="Controllers\UserManagementController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -13304,6 +13305,11 @@
     <Content Include="Views\Monitor\AcknowledgeAlarms.cshtml" />
     <Content Include="Views\Monitor\APRadioNetworkMonitor.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\UserManagement\UserManagement.cshtml" />
+    <Content Include="Views\UserManagement\UserAudit.cshtml" />
+    <Content Include="Views\UserManagement\ChangePassword.cshtml" />
+    <Content Include="Views\UserManagement\SessionSetting.cshtml" />
+    <Content Include="Views\UserManagement\AccountSetting.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
