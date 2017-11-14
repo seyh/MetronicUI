@@ -32,7 +32,7 @@
                     <div class="portlet-title">
                         <div class="caption">
                             <i class=" icon-settings font-green"></i>
-                            <span class="caption-subject font-green sbold uppercase">UPLOAD FILE</span>
+                            <span class="caption-subject font-green sbold uppercase">USER MANAGEMENT</span>
                         </div>
                     </div>
                     <div class="portlet-body">
@@ -46,11 +46,11 @@
                                     <button class="close" data-close="alert"></button> Your form validation is successful!
                                 </div>
                                 <div class="form-group  margin-top-20">
-                                    <label class="control-label col-md-2">
-                                        Version
+                                    <label class="control-label col-md-3">
+                                        User Name
                                         <span class="required"> * </span>
                                     </label>
-                                    <div class="col-md-10">
+                                    <div class="col-md-9">
                                         <div class="input-icon right">
                                             <i class="fa"></i>
                                             <input type="text" class="form-control" name="version" />
@@ -58,26 +58,60 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">
-                                        Details
+                                    <label class="control-label col-md-3">
+                                        Password
                                         <span class="required"> * </span>
                                     </label>
-                                    <div class="col-md-10">
+                                    <div class="col-md-9">
                                         <div class="input-icon right">
                                             <i class="fa"></i>
-                                            <input type="text" class="form-control" name="details" />
+                                            <input type="password" class="form-control" name="details" />
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">
-                                        Vendor
+                                    <label class="control-label col-md-3">
+                                        Confirm Password
                                         <span class="required"> * </span>
                                     </label>
-                                    <div class="col-md-10">
+                                    <div class="col-md-9">
+                                        <div class="input-icon right">
+                                            <i class="fa"></i>
+                                            <input type="password" class="form-control" name="vendor" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">
+                                        Login Range
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-5">
                                         <div class="input-icon right">
                                             <i class="fa"></i>
                                             <input type="text" class="form-control" name="vendor" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="input-icon right">
+                                            <i class="fa"></i>
+                                            <input type="text" class="form-control" name="vendor" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">
+                                        Role
+                                        <span class="required"> * </span>
+                                    </label>
+                                    <div class="col-md-9">
+                                        <div class="input-icon right">
+                                            <i class="fa"></i>
+                                            <select>
+                                                <option>Admin</option>
+                                                <option>Operator</option>
+                                                <option>Viewer</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -100,19 +134,9 @@
                 <!-- BEGIN VALIDATION STATES-->
                 <div class="portlet light ">
                     <div class="portlet-title">
-                        <div class="form-body">
-                            <div class="form-group">
-                                <div id="filetypedrpmodel" class="col-md-3">
-                                    <div class="form-group">
-                                        <select id="chooseFileType" class="bs-select form-control" data-bind="options: fileTypeOptions, optionsText: 'name', optionsValue: 'value', optionsCaption: 'Choose file type'"></select>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <a href="#" id="filterFirmwareBtn" class="btn green">
-                                        <i class="fa fa-check"></i> List
-                                    </a>
-                                </div>
-                            </div>
+                        <div class="caption">
+                            <i class=" icon-settings font-green"></i>
+                            <span class="caption-subject font-green sbold uppercase">USER LIST</span>
                         </div>
                     </div>
                     <div class="portlet-body">
@@ -127,10 +151,8 @@
                                         </label>
                                     </th>
                                     <th class="all">Name</th>
-                                    <th class="all">Version</th>
-                                    <th class="all">Detail</th>
-                                    <th class="all">Vendor</th>
-                                    <th class="none">Action</th>
+                                    <th class="all">Role</th>
+                                    <th class="all">Action</th>
                                 </tr>
                             </thead>
                             <tbody data-bind="dataTablesForEach : {
@@ -154,8 +176,6 @@
                                     <td><a href="#"><span data-bind="text: moment(recordTime()).format('DD-MM-YYYY HH:mm:ss')"></span></a></td>
                                     <td><span data-bind="text: ac.name()"></span></td>
                                     <td><span data-bind="text: ac.ipaddress()"></span></td>
-                                    <td><span data-bind="text: ac.macaddress()"></span></td>
-                                    <td><span data-bind="text: transmitMegabyte()"></span></td>
                                 </tr>
                             </tbody>
                         </table>
