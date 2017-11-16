@@ -26,117 +26,135 @@
         </div>
         <!-- END PAGE HEADER-->
         <div class="row">
-            <div class="col-md-5">
-                <!-- BEGIN VALIDATION STATES-->
-                <div class="portlet light ">
-                    <div class="portlet-title">
-                        <div class="caption">
-                            <i class=" icon-settings font-green"></i>
-                            <span class="caption-subject font-green sbold uppercase">USER MANAGEMENT</span>
-                        </div>
-                    </div>
-                    <div class="portlet-body">
-                        <!-- BEGIN FORM-->
-                        <form action="#" id="form_fileupload" class="form-horizontal">
-                            <div class="form-body">
-                                <div class="alert alert-danger display-hide">
-                                    <button class="close" data-close="alert"></button> You have some form errors. Please check below.
-                                </div>
-                                <div class="alert alert-success display-hide">
-                                    <button class="close" data-close="alert"></button> Your form validation is successful!
-                                </div>
-                                <div class="form-group  margin-top-20">
-                                    <label class="control-label col-md-3">
-                                        User Name
-                                        <span class="required"> * </span>
-                                    </label>
-                                    <div class="col-md-9">
-                                        <div class="input-icon right">
-                                            <i class="fa"></i>
-                                            <input type="text" class="form-control" name="version" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-3">
-                                        Password
-                                        <span class="required"> * </span>
-                                    </label>
-                                    <div class="col-md-9">
-                                        <div class="input-icon right">
-                                            <i class="fa"></i>
-                                            <input type="password" class="form-control" name="details" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-3">
-                                        Confirm Password
-                                        <span class="required"> * </span>
-                                    </label>
-                                    <div class="col-md-9">
-                                        <div class="input-icon right">
-                                            <i class="fa"></i>
-                                            <input type="password" class="form-control" name="vendor" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-3">
-                                        Login Range
-                                        <span class="required"> * </span>
-                                    </label>
-                                    <div class="col-md-5">
-                                        <div class="input-icon right">
-                                            <i class="fa"></i>
-                                            <input type="text" class="form-control" name="vendor" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="input-icon right">
-                                            <i class="fa"></i>
-                                            <input type="text" class="form-control" name="vendor" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-3">
-                                        Role
-                                        <span class="required"> * </span>
-                                    </label>
-                                    <div class="col-md-9">
-                                        <div class="input-icon right">
-                                            <i class="fa"></i>
-                                            <select>
-                                                <option>Admin</option>
-                                                <option>Operator</option>
-                                                <option>Viewer</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-actions">
-                                <div class="row">
-                                    <div class="col-md-offset-3 col-md-9">
-                                        <button type="submit" class="btn green">Submit</button>
-                                        <button type="button" class="btn default">Cancel</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                        <!-- END FORM-->
-                    </div>
-                </div>
-                <!-- END VALIDATION STATES-->
-            </div>
-            <div id="fileUploadList" class="col-md-7">
+            <div id="fileUploadList" class="col-md-12">
                 <!-- BEGIN VALIDATION STATES-->
                 <div class="portlet light ">
                     <div class="portlet-title">
                         <div class="caption">
                             <i class=" icon-settings font-green"></i>
                             <span class="caption-subject font-green sbold uppercase">USER LIST</span>
+                        </div>
+                        <div class="actions">
+                            <div class="btn-group">
+                                <a class="btn red btn-outline btn-circle" href="javascript:;" data-toggle="dropdown">
+                                    <i class="fa fa-share"></i>
+                                    <span class="hidden-xs"> User Settings </span>
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
+                                <ul class="dropdown-menu pull-right" id="sample_3_tools">
+                                    <li>
+                                        <a data-toggle="modal" href="#addUser" data-action="0" class="tool-action">
+                                            <i class="icon-user"></i> Add User
+                                        </a>
+                                        <div id="addUser" class="modal fade" tabindex="-1" data-width="760">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                <h4 class="modal-title">Define new user</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-md-10">
+                                                        <form action="#" id="form_fileupload" class="form-horizontal">
+                                                            <div class="form-body">
+                                                                <div class="alert alert-danger display-hide">
+                                                                    <button class="close" data-close="alert"></button> You have some form errors. Please check below.
+                                                                </div>
+                                                                <div class="alert alert-success display-hide">
+                                                                    <button class="close" data-close="alert"></button> Your form validation is successful!
+                                                                </div>
+                                                                <div class="form-group  margin-top-20">
+                                                                    <label class="control-label col-md-3">
+                                                                        User Name
+                                                                        <span class="required"> * </span>
+                                                                    </label>
+                                                                    <div class="col-md-9">
+                                                                        <div class="input-icon right">
+                                                                            <i class="fa"></i>
+                                                                            <input type="text" class="form-control" name="userName" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3">
+                                                                        Password
+                                                                        <span class="required"> * </span>
+                                                                    </label>
+                                                                    <div class="col-md-9">
+                                                                        <div class="input-icon right">
+                                                                            <i class="fa"></i>
+                                                                            <input type="password" class="form-control" name="userPass" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3">
+                                                                        Confirm Password
+                                                                        <span class="required"> * </span>
+                                                                    </label>
+                                                                    <div class="col-md-9">
+                                                                        <div class="input-icon right">
+                                                                            <i class="fa"></i>
+                                                                            <input type="password" class="form-control" name="userPassConfirm" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3">
+                                                                        Login Range
+                                                                        <span class="required"> * </span>
+                                                                    </label>
+                                                                    <div class="col-md-5">
+                                                                        <div class="input-icon right">
+                                                                            <i class="fa"></i>
+                                                                            <input type="text" class="form-control" name="userloginRange1" />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="input-icon right">
+                                                                            <i class="fa"></i>
+                                                                            <input type="text" class="form-control" name="userloginRange2" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3">
+                                                                        Role
+                                                                        <span class="required"> * </span>
+                                                                    </label>
+                                                                    <div class="col-md-9">
+                                                                        <div class="input-icon right">
+                                                                            <i class="fa"></i>
+                                                                            <select class="form-control select2" name="userRole">
+                                                                                <option value="Admin">Admin</option>
+                                                                                <option value="Operator">Operator</option>
+                                                                                <option value="Viewer">Viewer</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" data-dismiss="modal" class="btn btn-outline dark">Close</button>
+                                                <button type="button" class="btn green">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" data-action="1" class="tool-action">
+                                            <i class="icon-refresh"></i> Edit User
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" data-action="2" class="tool-action">
+                                            <i class="icon-trash"></i> Delete User
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="portlet-body">
@@ -192,6 +210,7 @@
 
 
 <script src="../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="../assets/pages/scripts/ui-extended-modals.min.js" type="text/javascript"></script>
 <script src="../assets/pages/scripts/table-datatables-responsive.min.js" type="text/javascript"></script>
 <script>
 
@@ -207,19 +226,27 @@
             focusInvalid: false, // do not focus the last invalid input
             ignore: "",  // validate all fields including form hidden input
             rules: {
-                filetype: {
+                userName: {
                     minlength: 2,
                     required: true
                 },
-                version: {
+                userPass: {
                     required: true,
                     email: true
                 },
-                details: {
+                userPassConfirm: {
                     required: true,
                     email: true
                 },
-                vendor: {
+                userloginRange1: {
+                    required: true,
+                    email: true
+                },
+                userloginRange2: {
+                    required: true,
+                    email: true
+                },
+                userRole: {
                     required: true,
                     email: true
                 }
@@ -258,42 +285,6 @@
                 form[0].submit(); // submit the form
             }
         });
-
-
-        var XHRfileTypeData = '[{ "value": 2, "name": "Templates" },{ "value": 3, "name": "Scripts" },{ "value": 4, "name": "Firmwares" }]';
-
-        var FileTypeViewModel = {
-            fileTypeOptions: ko.observableArray([]),
-            selectedFileType: ko.observable()
-        };
-
-
-        FileTypeViewModel.fileTypeOptions = ko.mapping.fromJS(JSON.parse(XHRfileTypeData));
-        FileTypeViewModel.selectedFileType.subscribe(function (latest) {
-        }, FileTypeViewModel);
-        ko.applyBindings(FileTypeViewModel, document.getElementById('filetypedrpmodel'));
-
-
-        var uploadinput = $("#fileUpload");
-        uploadinput.fileinput({
-            theme: 'fa',
-            showPreview: false,
-            uploadAsync: true,
-            uploadUrl: 'http://217.78.97.240:8081/data/file/',
-            maxFileSize: 1000000,
-            maxFilesNum: 10,
-            allowedFileTypes: ['image', 'video', 'flash']
-            //slugCallback: function (filename) {
-            //    return filename.replace('(', '_').replace(']', '_');
-            //}
-        }).on("filebatchselected", function(event, files) {
-            uploadinput.fileinput("upload");
-        });;
-        var fileType = '';
-        $('#chooseFileType').change(function () {
-            fileType = $(this).val();
-            console.log(fileType);
-        })
 
         ko.bindingHandlers.dataTablesForEach = {
             page: 0,

@@ -151,5 +151,6 @@
         DeviceTypeViewModel.LinuxPercentage = ko.computed(function () { return (this.Linux() / DeviceTypeViewModel.Total()) * 100 }, DeviceTypeViewModel);
         DeviceTypeViewModel.RouterPercentage = ko.computed(function () { return (this.Router() / DeviceTypeViewModel.Total()) * 100 }, DeviceTypeViewModel);
         ko.applyBindings(DeviceTypeViewModel, document.getElementById('DeviceResourceTbl'));
+        console.log(DeviceTypeViewModel.RouterPercentage());
     });
 </script>

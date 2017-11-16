@@ -136,7 +136,7 @@
 	        { "count": 1476, "time": 1503022511623 }, // 02:15
 	        { "count": 1252, "time": 1503026111623 }, // 03:15
 	        { "count": 2016, "time": 1503029711623 }, // 04:15
-	        { "count": 453, "time": 1503033311623 },  // 05:15
+	        { "count": 453,  "time": 1503033311623 }, // 05:15
 	        { "count": 2491, "time": 1503036911623 }, // 06:15
 	        { "count": 1519, "time": 1503040511623 }  // 07:15
         ];
@@ -144,9 +144,10 @@
         var WLANUserConnectedCountViewModel = {};
 
         $.ajax({
-            url: "http://217.78.97.240:8081/data/dashboard/device",
+            url: "http://217.78.97.240:8081/data/dashboard/clientAmount",
             success: function (response) {
                 countTicks = response;
+                console.log(countTicks);
             }
         });
 
